@@ -1,0 +1,13 @@
+
+**For new repositiory**
+
+git init
+git add -A
+git commit -m "enter msg"
+git remote add origin link
+git push -u origin master
+
+
+**for existing repositiory**
+git remote add origin link
+git push -u origin master
