@@ -174,10 +174,10 @@ print(" ".join(user_info3))     #o/p:Ravin 24
 
 
 
-list----->ordered collection of items of anytype and flexible
-array---->ordered collection of items of same type
-array module in python---->we can store fix data type
-javascript array = python list / flexible
+# list-----> ordered collection of items of anytype and flexible
+# array---->ordered collection of items of same type
+# array module in python---->we can store fix data type
+# javascript array = python list / flexible
 
 
 

@@ -39,7 +39,7 @@ mixed=(1,2,3,4.0)
 print(type(mixed))                   #o/p:<class 'tuple'>
 mix1=(3)                   #this is not tuple
 print(type(mix1))                    #o/p:<class 'int'>
-mix2=(3,)                  #if we want to make sinle element tuple, we have to use column after element
+mix2=(3,)                  #if we want to make single element tuple, we have to use column after element
 print(type(mix2))                    #o/p:<class 'tuple'>
 s=("Word")                 #this is not tuple
 print(type(s))                       #o/p:<class 'str'>
