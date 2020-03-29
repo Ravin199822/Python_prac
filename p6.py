@@ -2,7 +2,7 @@
 
 #it is also data structure
 #it can store any data type
-#but it is immutable, that means we can not update tuple
+#but it is imm   utable, that means we can not update tuple
 #data inside tuple
 #tuple are faster than lists
 
@@ -73,7 +73,7 @@ print(e)              #o/p:56
 
 #list inside tuples
 tuple_1=("Ravin",["rupen","yash"])
-#here we can add remove items from list
+#here we can add remove items in list
 tuple_1[1].pop()
 print(tuple_1)             #o/p:('Ravin', ['rupen'])
 tuple_1[1].append("Me also")

@@ -24,7 +24,15 @@
 # print(user1['name'])                               #o/p:Ravin
 # print(user1['age'])                                #o/p:22
 
-# #we can store anything inside dictionary....
+# # we can store anything inside dictionary....
+
+
+
+# add data in deictionary
+# user_in={}
+# user_in['name']='Ravin'
+# user_in['age']=22
+# print(user_in)
 
 
 
@@ -65,9 +73,127 @@
 
 
 
-#add data in empty dictionary
-user_in={}
-user_in['name']="Rebel"
-print(user_in)                #o/p:{'name': 'Rebel'}
-user_in['age']=23
-print(user_in)                #o/p:{'name': 'Rebel', 'age': 23}
+# #add data in empty dictionary
+# user_in={}
+# user_in['name']="Rebel"
+# print(user_in)                #o/p:{'name': 'Rebel'}
+# user_in['age']=23
+# print(user_in)                #o/p:{'name': 'Rebel', 'age': 23}
+
+
+
+
+# In keyword and iteration in dictionary
+
+user_info={
+    'name':'Ravin',
+    'age':22,
+    'fav_movie':['3 iditos','gangajal'],
+    'fav_song':['kal ho na ho','kata laga'],
+    'fav_sub':{'science':'drawing'}
+}
+
+
+# # check if key exist in dictionary  (only use in for checking by keys)
+# if 'name' in user_info:
+#     print("present")
+# else:
+#     print("not present")
+
+# o/p: present
+
+
+
+
+# # check if value exist in dictionary  (here we have to use in keyword + dictionary name with values())
+# if 22 in user_info.values():
+#     print("present")
+# else:
+#     print("Not present")
+
+# o/p: present
+
+
+# if ['kal ho na ho','kata laga'] in user_info.values():
+#     print("present")
+# else:
+#     print("Not present")
+
+# o/p: present
+
+
+
+
+
+# # looping in dictionary
+# for i in user_info:
+#     print(i)
+
+# o/p:  name
+#       age
+#       fav_movie
+#       fav_song
+#       fav_sub
+
+
+
+
+
+# for i in user_info.values():
+#     print(i)
+
+# o/p: Ravin
+#      22
+#      ['3 iditos', 'gangajal']
+#      ['kal ho na ho', 'kata laga']
+#      {'science': 'drawing'}
+
+
+
+
+
+
+# for i in user_info:
+#     print(user_info[i])
+
+# o/p: Ravin
+#      22
+#      ['3 iditos', 'gangajal']
+#      ['kal ho na ho', 'kata laga']
+#      {'science': 'drawing'}
+
+
+
+
+
+
+# # Values method
+# user_info_dict_value=user_info.values()
+# print(user_info_dict_value)        # o/p: dict_values(['Ravin', 22, ['3 iditos', 'gangajal'], ['kal ho na ho', 'kata laga'], {'science': 'drawing'}])
+# print(type(user_info_dict_value))  # o/p: <class 'dict_values'>
+
+
+
+
+
+# # Keys method
+# user_info_dict_keys=user_info.keys()
+# print(user_info_dict_keys)        # o/p: dict_keys(['name', 'age', 'fav_movie', 'fav_song', 'fav_sub'])
+# print(type(user_info_dict_keys))  # o/p: <class 'dict_keys'>
+
+
+
+
+
+
+
+
+# # Items methos
+# user_item=user_info.items()
+# print(user_item)              # o/p: dict_items([('name', 'Ravin'), ('age', 22), ('fav_movie', ['3 iditos', 'gangajal']), ('fav_song', ['kal ho na ho', 'kata laga']), ('fav_sub', {'science': 'drawing'})])
+# print(type(user_item))        # o/p: <class 'dict_items'>
+
+
+for key, value in user_info.items():
+    print(f'key is {key} and value is {value}')
+
