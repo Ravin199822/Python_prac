@@ -269,7 +269,7 @@ user_info={
 
 # # Fromkeys--------> used for creating dictionary
 
-# # d={'name':'unknown','age':'unknown'}
+d={'name':'unknown','age':'unknown'}
 
 # d=dict.fromkeys(['name','age','height'],'unknown')
 # print(d)                                   # o/p: {'name': 'unknown', 'age': 'unknown', 'height': 'unknown'}
@@ -357,3 +357,33 @@ user_info={
 # print(d5)                  #o/p: {'name': 'unknown', 'age': 'unknown'}
 # print(d5 is d1)            #o/p: False
 
+
+
+# # when we don't want to retuen none
+# print(d.get('names','not found !'))     #o/p: not found !
+# print(d.get('fav','not found!'))        #o/p: not found!
+
+
+# # two same key in dictionary
+# user={'name':'Ravin','age':22,'age':23}
+# print(user)                             #o/p: {'name': 'Ravin', 'age': 23}
+
+
+
+
+
+
+
+
+
+# Exercise 1
+
+def cube_finder(n):
+    cube={}
+    for i in range(1,n+1):
+        c=i*i*i
+        cube[i]=c
+    return cube
+
+n=input('Enter number:\n')
+print(cube_finder(int(n)))
