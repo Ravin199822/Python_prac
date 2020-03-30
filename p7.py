@@ -264,32 +264,96 @@ user_info={
 
 
 
-# fromkeys, get, clear, copy method
+# # fromkeys, get, clear, copy method
 
 
-# Fromkeys--------> used for creating dictionary
+# # Fromkeys--------> used for creating dictionary
 
-# d={'name':'unknown','age':'unknown'}
+# # d={'name':'unknown','age':'unknown'}
 
-d=dict.fromkeys(['name','age','height'],'unknown')
-print(d)                                   # o/p: {'name': 'unknown', 'age': 'unknown', 'height': 'unknown'}
+# d=dict.fromkeys(['name','age','height'],'unknown')
+# print(d)                                   # o/p: {'name': 'unknown', 'age': 'unknown', 'height': 'unknown'}
 
-d1=dict.fromkeys(('name','age','height'),'unknown')
-print(d1)                                  # o/p: {'name': 'unknown', 'age': 'unknown', 'height': 'unknown'}
-
-
-d2=dict.fromkeys("abc",'unknown')
-print(d2)                                  # o/p: {'a': 'unknown', 'b': 'unknown', 'c': 'unknown'}
-
-d3=dict.fromkeys(range(1,11),"unknown")
-print(d3)                                  # o/p: {1: 'unknown', 2: 'unknown', 3: 'unknown', 4: 'unknown', 5: 'unknown', 6: 'unknown', 7: 'unknown', 8: 'unknown', 9: 'unknown', 10: 'unknown'}
-
-d4=dict.fromkeys(('name','age'),['unknown','unknown'])
-print(d4)                                  # o/p: {'name': ['unknown', 'unknown'], 'age': ['unknown', 'unknown']}
+# d1=dict.fromkeys(('name','age','height'),'unknown')
+# print(d1)                                  # o/p: {'name': 'unknown', 'age': 'unknown', 'height': 'unknown'}
 
 
+# d2=dict.fromkeys("abc",'unknown')
+# print(d2)                                  # o/p: {'a': 'unknown', 'b': 'unknown', 'c': 'unknown'}
+
+# d3=dict.fromkeys(range(1,11),"unknown")
+# print(d3)                                  # o/p: {1: 'unknown', 2: 'unknown', 3: 'unknown', 4: 'unknown', 5: 'unknown', 6: 'unknown', 7: 'unknown', 8: 'unknown', 9: 'unknown', 10: 'unknown'}
+
+# d4=dict.fromkeys(('name','age'),['unknown','unknown'])
+# print(d4)                                  # o/p: {'name': ['unknown', 'unknown'], 'age': ['unknown', 'unknown']}
 
 
 
-# Get() Methos (Useful)
-print(d['name'])
+
+
+# # Get() Methos (Useful)
+# print(d['name'])                      #o/p: unknown
+# # print(d['names'])                     #o/p: Keyerror
+
+# print(d.get('name'))                  #o/p: unknown
+# print(d.get('names'))                 #o/p: None
+
+
+
+
+# if 'name' in d:
+#     print("present")
+# else:
+#     print("not present")              #o/p: present
+
+
+# if d.get('name'):
+#     print('present')
+# else:
+#     print('not present')              #o/p: present
+
+
+# if d.get('names'):
+#     print('present')
+# else:
+#     print('not present')              #o/p: not present
+
+# # if None-----> false
+
+
+
+
+
+
+
+
+
+# # clear() method------> used for clearing dictionary
+# d.clear()
+# print(d)                  #o/p: {}
+
+
+
+
+
+
+
+# # # Copy() method
+# # d5=d1.copy()
+# # print(d5)                #o/p: {'name': 'unknown', 'age': 'unknown', 'height': 'unknown'}
+
+# #  here, d5=d1 and d5=d1.copy() are not same, in the case of d5=d1, when we will work with d5, the values of d1 also will change, while in other case(d5=d1.copy()), two dictionaries will be created, and when we will make change in d5, d1 will npot be affected
+# d5=d1
+# print(d1)                #o/p: {'name': 'unknown', 'age': 'unknown', 'height': 'unknown'}
+# print(d5)                #o/p: {'name': 'unknown', 'age': 'unknown', 'height': 'unknown'}
+# d5.popitem()
+# print(d1)                #o/p: {'name': 'unknown', 'age': 'unknown'}
+# print(d5 is d1)          # o/p: True
+
+# #while
+
+# d5.popitem()
+# print(d1)                  #o/p: {'name': 'unknown', 'age': 'unknown', 'height': 'unknown'}
+# print(d5)                  #o/p: {'name': 'unknown', 'age': 'unknown'}
+# print(d5 is d1)            #o/p: False
+
