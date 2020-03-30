@@ -9,8 +9,7 @@
 # # 1) first method
 # user={'name':'Ravin','age':22}
 # print(user)                        #o/p:{'name': 'Ravin', 'age': 22}
-# print(type(user))                  #o/p:<class 'dict'>
-
+   
 # # 2) second method
 # user1=dict(name='Ravin',age=22)
 # print(user1)                         #o/p:{'name': 'Ravin', 'age': 22}
@@ -28,7 +27,7 @@
 
 
 
-# add data in deictionary
+# # add data in deictionary
 # user_in={}
 # user_in['name']='Ravin'
 # user_in['age']=22
@@ -83,7 +82,7 @@
 
 
 
-# In keyword and iteration in dictionary
+# # In keyword and iteration in dictionary
 
 user_info={
     'name':'Ravin',
@@ -100,7 +99,7 @@ user_info={
 # else:
 #     print("not present")
 
-# o/p: present
+# # o/p: present
 
 
 
@@ -111,7 +110,7 @@ user_info={
 # else:
 #     print("Not present")
 
-# o/p: present
+# # o/p: present
 
 
 # if ['kal ho na ho','kata laga'] in user_info.values():
@@ -119,7 +118,7 @@ user_info={
 # else:
 #     print("Not present")
 
-# o/p: present
+# # o/p: present
 
 
 
@@ -129,11 +128,11 @@ user_info={
 # for i in user_info:
 #     print(i)
 
-# o/p:  name
-#       age
-#       fav_movie
-#       fav_song
-#       fav_sub
+# # o/p:  name
+# #       age
+# #       fav_movie
+# #       fav_song
+# #       fav_sub
 
 
 
@@ -142,11 +141,11 @@ user_info={
 # for i in user_info.values():
 #     print(i)
 
-# o/p: Ravin
-#      22
-#      ['3 iditos', 'gangajal']
-#      ['kal ho na ho', 'kata laga']
-#      {'science': 'drawing'}
+# # o/p: Ravin
+# #      22
+# #      ['3 iditos', 'gangajal']
+# #      ['kal ho na ho', 'kata laga']
+# #      {'science': 'drawing'}
 
 
 
@@ -156,11 +155,11 @@ user_info={
 # for i in user_info:
 #     print(user_info[i])
 
-# o/p: Ravin
-#      22
-#      ['3 iditos', 'gangajal']
-#      ['kal ho na ho', 'kata laga']
-#      {'science': 'drawing'}
+# # o/p: Ravin
+# #      22
+# #      ['3 iditos', 'gangajal']
+# #      ['kal ho na ho', 'kata laga']
+# #      {'science': 'drawing'}
 
 
 
@@ -194,6 +193,103 @@ user_info={
 # print(type(user_item))        # o/p: <class 'dict_items'>
 
 
-for key, value in user_info.items():
-    print(f'key is {key} and value is {value}')
+# for key, value in user_info.items():
+#     print(f'key is {key} and value is {value}')
 
+# # o/p:   key is name and value is Ravin
+# #        key is age and value is 22
+# #        key is fav_movie and value is ['3 iditos', 'gangajal']
+# #        key is fav_song and value is ['kal ho na ho', 'kata laga']
+# #        key is fav_sub and value is {'science': 'drawing'}
+
+
+
+
+
+
+
+
+
+# # Add and Delete data
+
+# # ADD
+# user_info['user_tune']=['tune 1','tune 2']
+# print(user_info)                  # o/p: {'name': 'Ravin', 'age': 22, 'fav_movie': ['3 iditos', 'gangajal'], 'fav_song': ['kal ho na ho', 'kata laga'], 'fav_sub': {'science': 'drawing'}, 'user_tune': ['tune 1', 'tune 2']}
+
+
+
+
+
+# #DELETE
+# popped_item=user_info.pop('user_tune')
+# print(f'pop item is{popped_item}') # o/p: pop item is['tune 1', 'tune 2']---------->list
+# print(user_info)                   # o/p: {'name': 'Ravin', 'age': 22, 'fav_movie': ['3 iditos', 'gangajal'], 'fav_song': ['kal ho na ho', 'kata laga'], 'fav_sub': {'science': 'drawing'}}
+
+
+
+
+# #  popped item rendomly pop)
+# popped_item1=user_info.popitem()
+# print(popped_item1)                  # o/p: ('user_tune', ['tune 1', 'tune 2'])-----------------> tuple
+# print(user_info)                     # o/p: {'name': 'Ravin', 'age': 22, 'fav_movie': ['3 iditos', 'gangajal'], 'fav_song': ['kal ho na ho', 'kata laga'], 'fav_sub': {'science': 'drawing'}}
+# print(type(popped_item1))            # o/p: <class 'tuple'>
+
+
+
+
+
+
+
+
+
+
+# # update() mathod
+# more_info={'State':['Gujarat','Maharashtra'],'Dist':['Junagadh','Surat']}
+# user_info.update(more_info)
+# print(user_info)                   # o/p: {'name': 'Ravin', 'age': 22, 'fav_movie': ['3 iditos', 'gangajal'], 'fav_song': ['kal ho na ho', 'kata laga'], 'fav_sub': {'science': 'drawing'}, 'State': ['Gujarat', 'Maharashtra'], 'Dist': ['Junagadh', 'Surat']}
+
+# more_info1={'name':'Ravin Rakholiya'}
+# user_info.update(more_info1)
+# print(user_info)                   # o/p: {'name': 'Ravin Rakholiya', 'age': 22, 'fav_movie': ['3 iditos', 'gangajal'], 'fav_song': ['kal ho na ho', 'kata laga'], 'fav_sub': {'science': 'drawing'}, 'State': ['Gujarat', 'Maharashtra'], 'Dist': ['Junagadh', 'Surat']}
+
+# user_info.update({})                # it will not be affected
+# print(user_info)                     # o/p: {'name': 'Ravin', 'age': 22, 'fav_movie': ['3 iditos', 'gangajal'], 'fav_song': ['kal ho na ho', 'kata laga'], 'fav_sub': {'science': 'drawing'}}
+
+
+
+
+
+
+
+
+
+
+# fromkeys, get, clear, copy method
+
+
+# Fromkeys--------> used for creating dictionary
+
+# d={'name':'unknown','age':'unknown'}
+
+d=dict.fromkeys(['name','age','height'],'unknown')
+print(d)                                   # o/p: {'name': 'unknown', 'age': 'unknown', 'height': 'unknown'}
+
+d1=dict.fromkeys(('name','age','height'),'unknown')
+print(d1)                                  # o/p: {'name': 'unknown', 'age': 'unknown', 'height': 'unknown'}
+
+
+d2=dict.fromkeys("abc",'unknown')
+print(d2)                                  # o/p: {'a': 'unknown', 'b': 'unknown', 'c': 'unknown'}
+
+d3=dict.fromkeys(range(1,11),"unknown")
+print(d3)                                  # o/p: {1: 'unknown', 2: 'unknown', 3: 'unknown', 4: 'unknown', 5: 'unknown', 6: 'unknown', 7: 'unknown', 8: 'unknown', 9: 'unknown', 10: 'unknown'}
+
+d4=dict.fromkeys(('name','age'),['unknown','unknown'])
+print(d4)                                  # o/p: {'name': ['unknown', 'unknown'], 'age': ['unknown', 'unknown']}
+
+
+
+
+
+# Get() Methos (Useful)
+print(d['name'])
