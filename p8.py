@@ -47,9 +47,9 @@ print(s)                # o/p: {1, 2, 5}
 
 
 
-# # clear() method    (Remove all elements from the set)
-# s.clear()
-# print(s)      # o/p: set()
+# clear() method    (Remove all elements from the set)
+s.clear()
+print(s)      # o/p: set()
 
 
 
@@ -67,11 +67,11 @@ print(s3)       # o/p: {1, 2.0, 3.5, 'Ravin'}
 
 
 
-# # we can not store list and dictionary inside the set
-# s4={1,2,2,3,[4,3,5]}
-# print(s4)                     # o/p: Error
-# s5={1,2,2,3,{'name':'Ravin','age':22}}
-# print(s5)                     # o/p: Error
+# we can not store list and dictionary inside the set
+s4={1,2,2,3,[4,3,5]}
+print(s4)                     # o/p: Error
+s5={1,2,2,3,{'name':'Ravin','age':22}}
+print(s5)                     # o/p: Error
 
 
 
