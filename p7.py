@@ -385,5 +385,55 @@ def cube_finder(n):
         cube[i]=c
     return cube
 
-n=input('Enter number:\n')
-print(cube_finder(int(n)))
+n=input('Enter number:\n')          # 5
+print(cube_finder(int(n)))          #o/p: {1: 1, 2: 8, 3: 27, 4: 64, 5: 125}
+
+
+
+
+
+
+
+# word counter in dictionary
+
+def word_count(s):
+    count1={}
+    for char in s:
+        count1[char]=s.count(char)
+    return count1                                    # o/p: Enter your string:        
+                                                     #      RavinR
+s1=input("Enter your string:\n")                     #      {'R': 2, 'a': 1, 'v': 1, 'i': 1, 'n': 1}
+print(word_count(s1))
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Excercise 2
+
+user1={}
+name=input("Enter your name:\n")                                    # o/p: Enter your name:
+age=input("Enter your age\n")                                       #      Ravin
+fav_movies=input("Enter your favourite movies\n").split(',')        #      Enter your age
+fav_songs=input("Enter your favourite songs\n").split(',')          #      22
+                                                                    #      Enter your favourite movies
+user1['name']=name                                                  #      Dabbang, Baghi
+user1['age']=age                                                    #      Enter your favourite songs
+user1['fav_movies']=fav_movies                                      #      Kata laga, kal ho na ho
+user1['fav_songs']=fav_songs                                        #
+                                                                    #      {'name': 'Ravin', 'age': '22', 'fav_movies': ['Dabbang', ' Baghi'], 'fav_songs': ['Kata laga', ' kal ho na ho']}
+print(user1)   
+
+
+
+
+
+
