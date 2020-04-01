@@ -228,7 +228,7 @@ print(user_info)                   # o/p: {'name': 'Ravin', 'age': 22, 'fav_movi
 
 
 
-#  popped item rendomly pop)
+#  popped item (      rendomly pop)
 popped_item1=user_info.popitem()
 print(popped_item1)                  # o/p: ('user_tune', ['tune 1', 'tune 2'])-----------------> tuple
 print(user_info)                     # o/p: {'name': 'Ravin', 'age': 22, 'fav_movie': ['3 iditos', 'gangajal'], 'fav_song': ['kal ho na ho', 'kata laga'], 'fav_sub': {'science': 'drawing'}}
@@ -342,7 +342,7 @@ print(d)                  #o/p: {}
 d5=d1.copy()
 print(d5)                #o/p: {'name': 'unknown', 'age': 'unknown', 'height': 'unknown'}
 
-#  here, d5=d1 and d5=d1.copy() are not same, in the case of d5=d1, when we will work with d5, the values of d1 also will change, while in other case(d5=d1.copy()), two dictionaries will be created, and when we will make change in d5, d1 will npot be affected
+#  here, d5=d1 and d5=d1.copy() are not same, in the case of d5=d1, when we will work with d5, the values of d1 also will change, while in other case(d5=d1.copy()), two dictionaries will be created, and when we will make change in d5, d1 will not be affected
 d5=d1
 print(d1)                #o/p: {'name': 'unknown', 'age': 'unknown', 'height': 'unknown'}
 print(d5)                #o/p: {'name': 'unknown', 'age': 'unknown', 'height': 'unknown'}
@@ -359,7 +359,7 @@ print(d5 is d1)            #o/p: False
 
 
 
-# when we don't want to retuen none
+# when we don't want to return none
 print(d.get('names','not found !'))     #o/p: not found !
 print(d.get('fav','not found!'))        #o/p: not found!
 

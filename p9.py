@@ -42,3 +42,17 @@ print(new_list)                    # o/p: ['R', 'R', 'Y', 'C']
 new_list=[name[0] for name in names]
 print(new_list)                    # o/p: ['R', 'R', 'Y', 'C']
 
+
+
+
+
+
+
+
+
+
+# Excercise 1
+list1=['abc','def','klp','asd']
+rev_list=[rev[::-1] for rev in list1]
+print(rev_list)                    # o/p: ['cba', 'fed', 'plk', 'dsa']
+
