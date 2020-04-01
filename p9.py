@@ -1,10 +1,10 @@
 # List Comprehension         (uniq and important topic in python)
 
 
-# with thw help of list comprehension we can create of list in one line
+# with the help of list comprehension we can create of list in one line
 
 
-# ex--> create a list of squares from 1 tp 10
+# ex--> create a list of squares from 1 to 10
 square1=[]
 for i in range(1,11):
     square1.append(i**2)
@@ -49,7 +49,7 @@ print(new_list)                    # o/p: ['R', 'R', 'Y', 'C']
 
 
 
-
+  
 
 # Excercise 1
 list1=['abc','def','klp','asd']
