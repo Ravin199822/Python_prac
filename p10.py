@@ -36,3 +36,43 @@ for k,v in square1.items():
 String1="RavinsRi"
 word_count={i:String1.count(i) for i in String1}
 print(word_count)                              # o/p: {'R': 2, 'a': 1, 'v': 1, 'i': 2, 'n': 1, 's': 1}
+
+
+
+
+
+
+
+
+
+
+
+# Dictionary comprehension with if-elase statement
+dict_1={i:("even" if i%2==0 else "odd") for i in range(1,11)}
+print(dict_1)                               # o/p: {1: 'odd', 2: 'even', 3: 'odd', 4: 'even', 5: 'odd', 6: 'even', 7: 'odd', 8: 'even', 9: 'odd', 10: 'even'}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# SET Comprehension
+square_set={i**2 for i in range(1,11)}
+print(square_set)                   # o/p: {64, 1, 4, 36, 100, 9, 16, 49, 81, 25}
+
+
+
+
+# 2)
+names1=['Ravin','Rupen','Yash','Chirag']
+name_set={names2[0] for names2 in names1}
+print(name_set)                          # o/p: {'Y', 'R', 'C'}
