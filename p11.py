@@ -311,3 +311,56 @@ d1={'first_name':'Ravin1','last_name':'Rakholiya1'}
 print(func2(**d1))                           # o/p: {'first_name': 'Ravin1', 'last_name': 'Rakholiya1'}
 
 
+
+
+
+
+
+
+
+
+# Function with all type of parameters 
+# PADK----> parameters, *args, default parameters, **kwargs
+
+# Default parameter
+def func3(name="unknown",age=24):     #parameters
+    print(f"name : {name} and age : {age}")
+    
+
+func3()    #args           # o/p: name : unknown and age : 24
+func3("Ravin")             # o/p: name : Ravin and age : 24
+func3(22)                  # o/p: name : 22 and age : 24
+func3("Rebel",22)          # o/p: name : Rebel and age : 22
+
+
+
+
+# padk
+def func4(name,*args,last_name="Rakholiya",**kwargs):
+    print(name)                         # o/p: Ravin
+    print(args)                         # o/p: (1, 2, 3)
+    print(last_name)                    # o/p: Rakholiya
+    print(kwargs)                       # o/p: {'a': 'c', 'b': 'd'}  
+
+func4("Ravin", 1,2,3,a='c',b='d')
+
+
+
+
+
+
+
+
+
+
+
+# Excercise 2
+def names(args,**kwargs):
+    if kwargs.get('reverse_str')==True:
+        return [i[::-1].title() for i in args]
+    else:
+        return [i.title() for i in args]
+
+name=["ravin",'rupen','yash']
+print(names(name))                       # o/p: ['Ravin', 'Rupen', 'Yash']
+print(names(name,reverse_str=True))      # o/p: ['Nivar', 'Nepur', 'Hsay'] 
