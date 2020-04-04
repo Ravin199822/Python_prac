@@ -258,4 +258,86 @@ print(dict(Example))                      # o/p: {'a': 1, 'b': 2}
 
 l_name=["Rakholiya","Patel","Gami"]
 print(list(zip(user_id,names3,l_name)))  # o/p: [('user_1', 'Ravin', 'Rakholiya'), ('User_2', 'Rupen', 'Patel'), ('user_3', 'Yash', 'Gami')]
-print(dict(zip(user_id,names3,l_name)))  # o/p: Error
+# print(dict(zip(user_id,names3,l_name)))  # o/p: Error
+
+
+
+
+
+
+
+list1=[1,2,3,4]
+list2=[5,6,7,8]
+list3=list(zip(list1,list2))
+print(list3)                         # o/p: [(1, 5), (2, 6), (3, 7), (4, 8)]``
+
+
+
+
+# * operator with zip
+print(zip(* list3))                  # o/p: <zip object at 0x00ED2F28> 
+l3=list(zip(*list3))            
+print(l3)                            # o/p: [(1, 2, 3, 4), (5, 6, 7, 8)]
+l4,l5=l3
+print(list(l4))                      # o/p: [1, 2, 3, 4]
+print(list(l5))                      # o/p: [5, 6, 7, 8]
+
+
+
+
+new_list=[]
+for i in zip(list1,list2):
+    new_list.append(max(i))
+
+print(new_list)                     # o/p: [5, 6, 7, 8]
+
+print([max(i) for i in zip(list1,list2)])      # o/p: [5, 6, 7, 8]
+
+
+
+
+
+
+
+
+
+
+
+
+# Advance() function
+
+
+
+# Challange
+# define a function take any no of lists containing number 
+# [1,2,3] , [4,5,6] , [7,8,9]
+# return average
+# (1+4+7)/3 , (2+5+8)/3 , (3,6,9)/3
+
+li1=[1,2,3]
+li2=[4,5,6]
+li3=[7,8,9]
+def avg_finder(l1,l2):
+    avg_list=[]
+    for i in zip(l1,l2):
+        avg_list.append(sum(i)/len(i))
+    return avg_list
+
+print(avg_finder(li1,li2))                 # o/p: [2.5, 3.5, 4.5]
+
+
+
+# try to make this anonymous funcion in one line using lambda
+def average_finder(*abc):
+    average_list=[]
+    for i in zip(*abc):
+        average_list.append(sum(i)/len(i))
+    return average_list
+
+print(average_finder(li1,li2,li3))         # o/p: [4.0, 5.0, 6.0]
+
+
+
+
+func=lambda *abc:[sum(i)/len(i) for i in zip(*abc)]
+print(func(li1,li2,li3))                  # o/p: [4.0, 5.0, 6.0] 
