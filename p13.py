@@ -341,3 +341,44 @@ print(average_finder(li1,li2,li3))         # o/p: [4.0, 5.0, 6.0]
 
 func=lambda *abc:[sum(i)/len(i) for i in zip(*abc)]
 print(func(li1,li2,li3))                  # o/p: [4.0, 5.0, 6.0] 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Any() and All() function
+
+num1=[2,4,6,8,10]
+num2=[1,2,3,5,6]
+
+
+num_check=[]
+for i in num1:        
+    num_check.append(i%2==0)
+
+print(num_check)                   # o/p: [True, True, True, True, True]
+print(all(num_check))              # o/p: True
+print(all([True, True, True, True, True]))         # o/p: True
+print(all([True, False, True, True, True]))        # o/p: False
+
+
+
+
+print(all([i%2==0 for i in num1]))                 # o/p: True
+
+
+
+print(any([True, False, True, True, True]))         # o/p: True
+print(any([i%2==0 for i in num2]))                  # o/p: True
+print(any([False, False, True, False, False]))      # o/p: True
