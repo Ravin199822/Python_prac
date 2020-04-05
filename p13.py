@@ -506,3 +506,91 @@ guitars=[
 print(sorted(guitars, key = lambda item:item.get('price')))                 # o/p: [{'model': 'yamaha f310', 'price': 8400}, {'model': 'faith apollo venus', 'price': 35000}, {'model': 'faith naptune', 'price': 50000}, {'model': 'taylor 814ce', 'price': 450000}]
 print(sorted(guitars, key = lambda item:item.get('price'), reverse=True))   # o/p: [{'model': 'taylor 814ce', 'price': 450000}, {'model': 'faith naptune', 'price': 50000}, {'model': 'faith apollo venus', 'price': 35000}, {'model': 'yamaha f310', 'price': 8400}]
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# what are doc string
+# how to write docstring
+# how to see doc string
+# what is help function
+
+# we can write doc string inside function after collan  
+# doc string is msg that we can give to user
+def add(a,b):
+    ''' this function takes 2 value and return their sum '''              # how to write doc string( we can write this string inside triple single quots or double duots ''' add your info'''  or   """ add your info""")
+    return a+b
+
+print(add(2,3))                         # o/p: 5
+
+# how to see doc string
+print(add.__doc__)                      # o/p:  this function takes 2 value and return their sum
+
+
+
+# len, sum, max, min, sorted
+
+print(len.__doc__)                      # o/p: Return the number of items in a container.\
+
+
+print(sum.__doc__)                      
+# o/p:Return the sum of a 'start' value (default: 0) plus an iterable of numbers
+
+#       When the iterable is empty, return the start value.
+#       This function is intended specifically for use with numeric values and may
+#       reject non-numeric types.
+
+
+print(max.__doc__)                     
+# o/p: max(iterable, *[, default=obj, key=func]) -> value
+#       max(arg1, arg2, *args, *[, key=func]) -> value
+
+#       With a single iterable argument, return its biggest item. The
+#       default keyword-only argument specifies an object to return if
+#       the provided iterable is empty.
+#       With two or more arguments, return the largest argument.
+
+
+print(min.__doc__)                      
+# o/p: min(iterable, *[, default=obj, key=func]) -> value
+#       min(arg1, arg2, *args, *[, key=func]) -> value
+
+#       With a single iterable argument, return its smallest item. The
+#       default keyword-only argument specifies an object to return if
+#       the provided iterable is empty.
+#       With two or more arguments, return the smallest argument.
+
+
+
+
+print(sorted.__doc__)                   
+# o/p: Return a new list containing all items from the iterable in ascending order.
+
+#       A custom key function can be supplied to customize the sort order, and the
+#       reverse flag can be set to request the result in descending order.
+
+
+
+# help() function
+
+print(help(sum))
+# o/P: Help on built-in function sum in module builtins:
+
+#   sum(iterable, /, start=0)
+#        Return the sum of a 'start' value (default: 0) plus an iterable of numbers
+
+#         When the iterable is empty, return the start value.
+#         This function is intended specifically for use with numeric values and may
+#         reject non-numeric types.
+
+#       None
