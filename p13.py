@@ -382,3 +382,127 @@ print(all([i%2==0 for i in num1]))                 # o/p: True
 print(any([True, False, True, True, True]))         # o/p: True
 print(any([i%2==0 for i in num2]))                  # o/p: True
 print(any([False, False, True, False, False]))      # o/p: True
+
+
+
+
+
+
+
+def num_sum(*args):
+    if all([(type(j)==int or type(j)==float)for j in args]):
+        sum=0
+        for i in args:
+            sum+=i
+        return sum
+    else:
+        return "wrong input"
+
+print(num_sum(1,2,3,4,4.5))                          # o/p: 14.5
+print(num_sum(1,2,3,4,4.5,"Ravin",["sds"]))          # o/p: wrong input
+print(num_sum(1,2,3,4,4.5,"asd"))                    # o/p: wrong input
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Advance min() and max() function
+
+numbers2=[5,3,6,12,1]
+print(max(numbers2))                        # o/p: 12
+print(min(numbers2))                        # o/p: 1
+
+
+# find max min in list according to length
+def func1(item):
+    return len(item)
+
+list4=["Ravin","abcd","as","abc","abcdef"]
+print(max(list4))                           # o/p: as
+print(max(list4, key=func1))                # o/p: abcdef                    max(list name, key=method name)
+print(max(list4, key=lambda i:len(i)))      # o/p: abcdef
+
+print(min(list4))                           # o/p: Ravin
+print(min(list4, key=func1))                # o/p: as
+print(min(list4, key=lambda i:len(i)))      # o/p: as
+
+
+
+
+students={
+    "Ravin":{"score":90,"age":22},
+    "Rupen":{"score":85,"age":20},
+    "Yash":{"score":70,"age":27}
+}
+
+print(max(students, key = lambda item:students[item]['score']))      # o/p: Ravin
+print(max(students, key = lambda item:students[item]['age']))        # o/p: Yash
+
+
+
+students1=[
+    {'name':'Ravin','score':90,'age':22},   
+    {'name':'Rupen','score':95,'age':20},
+    {'name':'Yash','score':70,'age':17}
+]
+print(max(students1, key=lambda item:item.get('score')))          # o/p: {'name': 'Rupen', 'score': 95, 'age': 20}
+print(max(students1, key=lambda item:item.get('score'))['name'])  # o/p: Rupen
+print(max(students1, key=lambda item:item.get('score')).get('name')) # o/p: Rupen 
+print(max(students1, key=lambda item:item.get('age')).get('name'))   # o/p: Ravin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Advance sorted() function
+fruits=['grapes','mango','apple']
+fruits.sort()
+print(fruits)                               # o/p: ['apple', 'grapes', 'mango']
+
+fruits1=('grapes','mango','apple')
+# print(fruits1.sort())                       # o/p: Error
+sorted(fruits1)
+print(fruits1)                              # o/p: ('grapes', 'mango', 'apple')          tuple are immutable
+print(sorted(fruits1))                      # o/p: ['apple', 'grapes', 'mango']          sorted function with tuple will return list
+
+# sorting is same in tuple and dictionary
+fruits2={'grapes','mango','apple'}
+sorted(fruits2)
+print(fruits2)                              # o/p: {'mango', 'apple', 'grapes'}         dict are immutable
+print(sorted(fruits2))                      # o/p: ['apple', 'grapes', 'mango']
+
+
+
+
+
+guitars=[
+    {'model':'yamaha f310', 'price':8400},
+    {'model':'faith naptune', 'price':50000},
+    {'model':'faith apollo venus', 'price':35000},
+    {'model':'taylor 814ce', 'price':450000},
+]
+
+print(sorted(guitars, key = lambda item:item.get('price')))                 # o/p: [{'model': 'yamaha f310', 'price': 8400}, {'model': 'faith apollo venus', 'price': 35000}, {'model': 'faith naptune', 'price': 50000}, {'model': 'taylor 814ce', 'price': 450000}]
+print(sorted(guitars, key = lambda item:item.get('price'), reverse=True))   # o/p: [{'model': 'taylor 814ce', 'price': 450000}, {'model': 'faith naptune', 'price': 50000}, {'model': 'faith apollo venus', 'price': 35000}, {'model': 'yamaha f310', 'price': 8400}]
+
