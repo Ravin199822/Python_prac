@@ -73,6 +73,6 @@ print(square_set)                   # o/p: {64, 1, 4, 36, 100, 9, 16, 49, 81, 25
 
 
 # 2)
-names1=['Ravin','Rupen','Yash','Chirag']
+names1=['Ravin','Rupen','Yash','Chirag']   
 name_set={names2[0] for names2 in names1}
 print(name_set)                          # o/p: {'Y', 'R', 'C'}

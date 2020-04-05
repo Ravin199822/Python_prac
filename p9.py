@@ -4,7 +4,7 @@
 # with the help of list comprehension we can create of list in one line
 
 
-# ex--> create a list of squares from 1 to+nnnn 10
+# ex--> create a list of squares from 1 to 10
 square1=[]
 for i in range(1,11):
     square1.append(i**2)

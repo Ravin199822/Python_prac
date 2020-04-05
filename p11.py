@@ -1,4 +1,4 @@
-# *argsor *operator
+# *args or *operator
 
 
 
@@ -7,7 +7,7 @@ def sum_num(a,b):
     return a+b
 
 print(sum_num(3,4))                      # o/p: 7
-# print(sum_num(2,3,4))                   # o/p: Type Error            -----> we can not pass more than two argument in sum_num function. we can overcome this probem by using *args (here we can use * with anyone like *abd, *asd anything)
+# print(sum_num(2,3,4))                   # o/p: Type Error            -----> we can not pass more than two argument in sum_num function. we can overcome this problem by using *args (here we can use * with anyone like *abd, *asd anything)
 
 
 
