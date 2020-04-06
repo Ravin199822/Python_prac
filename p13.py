@@ -7,7 +7,7 @@
 
 
 # How we can do without enumerate function
-names=['Ravin','Rupen','Yash','Chirag','Dhara','Trupti']            # o/p: 0------>Ravin
+names=['Ravin','Rupen','Yash','Chirag','Dhara','Trupti']             # o/p: 0------>Ravin
 pos=0                                                               #      1------>Rupen 
 for name in names:                                                  #      2------>Yash  
     print(f"{pos}------>{name}")                                    #      3------>Chirag
@@ -87,7 +87,7 @@ print(list(map(square1,numbers)))         # o/p: [1, 4, 9, 16, 25]
 
 # OR ( using map and lambda function)           lambda parameters:operation
 
-print(list(map(lambda s:s**2, numbers)))  # o/p: [1, 4, 9, 16, 25]
+print(list(map(lambda s:s**2, numbers)))  # v  o/p: [1, 4, 9, 16, 25]
 
 # OR  ( using list comprehension)          [append_with_list loop]
 
@@ -206,7 +206,7 @@ number_iter=iter(numbers1)
 # print(next(number_iter))                   # o/p: 1
 # print(next(number_iter))                   # o/p: 2
 # print(next(number_iter))                   # o/p: 3
-# print(next(number_iter))                   # o/p: 4
+# print(next (number_iter))                   # o/p: 4
 # print(next(number_iter))                   # o/p: 5
 # print(next(number_iter))                   # o/p: Error (StopIteration)
 
@@ -269,7 +269,7 @@ print(list(zip(user_id,names3,l_name)))  # o/p: [('user_1', 'Ravin', 'Rakholiya'
 list1=[1,2,3,4]
 list2=[5,6,7,8]
 list3=list(zip(list1,list2))
-print(list3)                         # o/p: [(1, 5), (2, 6), (3, 7), (4, 8)]``
+print(list3)                         # o/p: [(1, 5), (2, 6), (3, 7), (4, 8)]
 
 
 
@@ -309,10 +309,10 @@ print([max(i) for i in zip(list1,list2)])      # o/p: [5, 6, 7, 8]
 
 
 # Challange
-# define a function take any no of lists containing number 
+# define a function that take any no of lists containing number 
 # [1,2,3] , [4,5,6] , [7,8,9]
 # return average
-# (1+4+7)/3 , (2+5+8)/3 , (3,6,9)/3
+# (1+4+7)/3 , (2+5+8)/3 , (3+6+9)/3
 
 li1=[1,2,3]
 li2=[4,5,6]
@@ -327,7 +327,7 @@ print(avg_finder(li1,li2))                 # o/p: [2.5, 3.5, 4.5]
 
 
 
-# try to make this anonymous funcion in one line using lambda
+# try to make this anonymous function in one line using lambda
 def average_finder(*abc):
     average_list=[]
     for i in zip(*abc):
@@ -521,14 +521,14 @@ print(sorted(guitars, key = lambda item:item.get('price'), reverse=True))   # o/
 
 
 # what are doc string
-# how to write docstring
+# how to write doc string
 # how to see doc string
 # what is help function
 
 # we can write doc string inside function after collan  
 # doc string is msg that we can give to user
 def add(a,b):
-    ''' this function takes 2 value and return their sum '''              # how to write doc string( we can write this string inside triple single quots or double duots ''' add your info'''  or   """ add your info""")
+    ''' this function takes 2 value and return their sum '''              # how to write doc string( we can write this string inside triple single quots or triple double duots ''' add your info'''  or   """ add your info""")
     return a+b
 
 print(add(2,3))                         # o/p: 5
