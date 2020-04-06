@@ -301,6 +301,20 @@ def func1(name, **kwarg):
 
 print(func1('rupen',first_name='Ravin',last_name='Rakholiya'))
 
+# o/p: rupen
+#      {'first_name': 'Ravin', 'last_name': 'Rakholiya'}
+
+
+
+
+
+# def func2(**kwarg):
+#     return kwarg
+
+# d1={'first_name':'Ravin1','last_name':'Rakholiya1'}
+# print(func2(d1))                                     # o/p: type error
+
+
 
 
 
