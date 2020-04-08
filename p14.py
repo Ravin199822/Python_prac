@@ -454,3 +454,41 @@ def add_all1(*args):
 
 print(add_all1(1,2,3,4,5))                       # o/p: 15
 print(add_all1(1,2,3,4,5,[1,2,3]))               # o/p: Invalid arguments
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Decorator with arguments
+
+from functools import wraps
+def only_data_type_allow(data_type):
+    def decorator1(function11):
+        @wraps(function11)
+        def wrapper1(*args,**kwarg):
+            if all([type(i)==data_type for i in args]):
+                return function11(*args,**kwarg)
+            return "Invalid input"
+        return wrapper1
+    return decorator1
+
+
+@only_data_type_allow(str)
+def string_join(*args):
+    s=""
+    for i in args:
+        s+=i
+    return s
+
+
+print(string_join('Ravin ','Rakholiya'))                # o/p: Ravin Rakholiya        
+print(string_join('Ravin ','Rakholiya',8))              # o/p: Invalid input     
