@@ -11,3 +11,12 @@ git push -u origin master
 **for existing repositiory**
 git remote add origin link
 git push -u origin master
+
+
+
+
+
+git status
+git add .
+git commit -m "Enter msg"
+git push -u origin master

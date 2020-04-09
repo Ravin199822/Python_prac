@@ -39,7 +39,7 @@ print(my_map(lambda a:a**2, l))        # o/p: [1, 4, 9, 16]
 def my_map2(func,l):
     return[func(i) for i in l]
 
-print(my_map(lambda a:a**2,l))         # o/p: [1, 4, 9, 16]
+print(my_map2(lambda a:a**2,l))         # o/p: [1, 4, 9, 16]
 
 
 
@@ -129,7 +129,7 @@ def func2():
 func1()                                        # o/p: this is function 1
 func2()                                        # o/p: this is function 2
 
-# here we can write func1 at thee place of var2 and var2()
+# here we can write func1 instead of var2 and var2()
 var2=decorator_function(func1)
 var2()                                         # o/p: this is awesome
                                                #      this is function 1
@@ -139,7 +139,7 @@ func1()                                         # o/p: this is awesome
                                                #      this is function 1
 
 
-# here we can write func2 at thee place of var3 and var3()
+# here we can write func2 instead of var3 and var3()
 var3=decorator_function(func2)                 # o/p: this is awesome
 var3()                                         #      this is function 2
 
@@ -188,7 +188,7 @@ func22()                                                   # o/p: this is awesom
         # def func3(a):                                              
         #     print(f"this is function {a}")  
 
-        # func3(4)                                      # o/p: type error               
+        # func3(4)                                       # o/p: type error               
 
 
 

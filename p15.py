@@ -120,3 +120,153 @@ for i in j:
 
 for i in j:
     print(i)            # o/p:                     here is no output because nums1() is generator, hence we can can use value only one time.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# -------- Excercise 1 ---------
+
+# define generator function
+# take one number as argument
+# generate a sequence of even numbers from 1 to that number
+
+
+
+def seq_even(n):
+    for i in range(1,n+1):                   # for i in range(2,n+1,2):
+        if i%2==0:                           #     yield i
+            yield i
+
+s1=seq_even(20)
+for i in s1:
+    print(i)
+
+# o/p: 2
+#      4
+#      6
+#      8
+#      10
+#      12
+#      14
+#      16
+#      18
+#      20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Generator comprehension
+
+square=[i**2 for i in range(1,11)]
+print(square)                          # o/p: [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+generator_square=(i**2 for i in range(1,11))              # here we just use () instead of [] for make generator comprehension
+print(generator_square)                # o/p: <generator object <genexpr> at 0x033B1E98>
+
+for i in generator_square:
+    print(i)
+
+# o/p: 1
+#      4
+#      9
+#      16
+#      25
+#      36
+#      49
+#      64
+#      81
+#      100
+
+for i in generator_square:                      
+    print(i)                                   # o/p:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# List vs Generator
+
+# memory usage, time
+# when to use list, when to use generator
+
+
+
+# Memory
+
+# l=[i**2 for i in range(10000000)]                          # open task manager and check memory during run mode
+
+# l1=(i**2 for i in range(10000000))                         #open task manager and check memory during run mode
+
+
+# in task manager we can easily see the difference of memory occuption.....list will get more memory then generator
+
+
+
+
+
+
+# Time 
+
+
+# import time
+# t1=time.time()
+# l2=[i**2 for i in range(10000000)]
+# t2=time.time()
+# print(t2-t1)                                  # o/p: 5.533963918685913
+
+
+
+
+
+import time
+t1=time.time()
+l2=(i**2 for i in range(10000000))
+t2=time.time()
+print(t2-t1)                                    # o/p: 0.0
+
+
+
+
+
+
+
+# when use list
+# when we want to store our sequence, and use data more than one time
+
+
+
+# when use generator
+# when we don't want to store our sequence, and use data only one time
