@@ -397,3 +397,223 @@ p21=Person2("Ravin","Rakholiya")
 p22=Person2("Ravin1","Rakholiya1")
 
 print(Person2.count_instance)                             # o/p: 2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# class Methods
+
+# difference between class method and instance method
+
+# class variable = class attribute
+
+
+
+
+class Person3:
+    count_instance=0             # class variable --or-- class attribute              ------> same for all objects of the class, we can call class variable by using class name with . operator
+    def __init__(self, first_name, last_name, age):                 # instance method
+        Person3.count_instance+=1
+        self.first_name=first_name
+        self.last_name=last_name
+        self.age=age
+
+    @classmethod                              # declaring class method
+    def instance_count(cls):
+        return f"you have created {cls.count_instance} instances in {cls.__name__} class"              # here we can write Person3.count_instance  and Person3.__name__   insted of cls.count_instance and cls.__name__
+
+    def full_name(self):                                            # instance method   
+        return f"{self.first_name} {self.last_name}"
+
+    def is_above_18(self):                                          # insatnce method      -------i can use instance method with instance(p31,p32) of the class
+        return self.age>18
+
+p31=Person3("Ravin","Rakholiya",10)
+p32=Person3("Rupen","Rakholiya1",19)
+print(Person3.instance_count())          # calling class method     # o/p: you have created 2 instances in Person3 class       # this thing, we can access by using instance name.
+print(p31.instance_count())                                         # o/p: you have created 2 instances in Person3 class       # but we should not do this
+
+# in instance method first argument is object(self), while in class method the first argument is class
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# class methods as a constructors
+
+# when we create out instance(object), its call init method which is counstructor
+# but here, we want to create object in different way, which calls class method and would be constructor for that instance
+
+class Person4:
+    count_instance=0             
+    def __init__(self, first_name, last_name, age):                 
+        Person3.count_instance+=1
+        self.first_name=first_name
+        self.last_name=last_name
+        self.age=age
+
+    @classmethod                             
+    def instance_count(cls):
+        return f"you have created {cls.count_instance} instances in {cls.__name__} class" 
+
+    @classmethod
+    def from_string(cls,string):
+        first,last,age=string.split(',')    
+        return cls(first,last,int(age))         
+
+    def full_name(self):                                               
+        return f"{self.first_name} {self.last_name}"
+
+    def is_above_18(self):                                          
+        return self.age>18
+
+p41=Person4("Ravin","Rakholiya",10)
+p42=Person4("Rupen","Rakholiya1",19)
+
+p43=Person4.from_string('Yash,Rakholiya2,20')
+print(p43.full_name())                  # o/p: Yash Rakholiya2
+print(p43.is_above_18())                # o/p: True
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Static Method
+
+# class method related with our class
+# instance method related with our instance
+# but static method is not related with our class and instance
+# static method is like our normal function 
+# static method has logical relation with our class
+# we can create static method by using static method decorator
+
+
+class Person5:
+    count_instance=0             
+    def __init__(self, first_name, last_name, age):                 
+        Person3.count_instance+=1
+        self.first_name=first_name
+        self.last_name=last_name
+        self.age=age
+
+    @classmethod                             
+    def instance_count(cls):
+        return f"you have created {cls.count_instance} instances in {cls.__name__} class" 
+
+    @classmethod
+    def from_string(cls,string):               # cls represents our class
+        first,last,age=string.split(',')    
+        return cls(first,last,int(age))       
+
+    @staticmethod                                # creating static method
+    def hello():
+        print('hello, static method called')  
+
+    def full_name(self):                       # self represents out instance                            
+        return f"{self.first_name} {self.last_name}"
+
+    def is_above_18(self):                                          
+        return self.age>18
+
+p51=Person5("Ravin","Rakholiya",10) 
+p52=Person5("Rupen","Rakholiya1",19)
+Person5.hello()          # calling static method                # o/p: hello, static method called
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Encapsulation                   ----encapulate data in class (encaptulate methodas data in a class)
+# Abstraction                     ----hide the complexity   (method hide main logic)
+# Some special Naming Conventions ----show as private for developer, but not private
+# Name Mangling                   ---- __name  (not a convention)
+ 
+
+class Phone:
+    def __init__(self, brand, model_name, price):
+        self.brand=brand
+        self.model_name=model_name
+        # self._price=price
+        self.__price=price
+
+    def make_a_call(self, phone_number):
+        print(f"calling {phone_number}.......")
+
+    def full_name(self):
+        return f"{self.brand} {self.model_name}"
+
+    def send_message(self):
+        pass    #twilio
+
+
+
+l=[4,2,7,1,5]
+l.sort()            # python use tim sort for sorting, hide complexity
+print(l)                 # o/p: [1, 2, 4, 5, 7]
+
+# with out encapsulation, abstraction is not possible.
+
+
+# convention
+# in python, everything is public.
+
+# '_' (underscore) is convention------> we use this because, i can say to other developer that don't make changes in it and treat as private method because it is private. but you know it is not private, anyone can make changes in it
+
+# _name  ---> convention of private name
+# __name__   ----> it is called by double underscorw method, or  dunder, or  magic method
+
+
+phone1=Phone('nokia','1100',1000)
+# print(phone1._price)                    # o/p: 1000
+# phone1._price=-1000
+# print(phone1._price)                    # o/p: -1000
+
+
+# Name mangling ----> _classname__attributename
+# print(phone1.__price)                   # o/p: AttributeError: 'Phone' object has no attribute '__price'
+print(phone1.__dict__)                  # o/p: {'brand': 'nokia', 'model_name': '1100', '_Phone__price': 1000}      # here, python changed __price as _Phone__price
+print(phone1._Phone__price)             # o/p: 1000
+phone1._Phone__price=-1000
+print(phone1._Phone__price)             # o/p: -1000
+
+print(phone1.brand)                     # o/p: nokia
