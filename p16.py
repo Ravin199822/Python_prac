@@ -617,3 +617,169 @@ phone1._Phone__price=-1000
 print(phone1._Phone__price)             # o/p: -1000
 
 print(phone1.brand)                     # o/p: nokia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Property, Setter decorator
+
+# will discuss three prblems in existing
+# then we will solve them using getter, setter decorator
+
+class Phone1:
+    def __init__(self, brand, model_name, price):
+        self.brand=brand
+        self.model_name=model_name
+        self._price=price
+        self.complete_specification=f"{self.brand} {self.model_name} and price is {self._price}"
+
+
+    def make_a_call(self, phone_number):
+        print(f"calling {phone_number}.......")
+
+    def full_name(self):
+        return f"{self.brand} {self.model_name}"
+
+phone11=Phone1('nokia','1100',1000)                                       # problem 1) here i can enter negative price, which is practically not possible in life, because phone has not negative price
+print(phone11.brand)                                     # o/p: nokia
+print(phone11.model_name)                                # o/p: 1100
+print(phone11._price)                                    # o/p: 1000
+print(phone11.complete_specification)                    # o/p: nokia   1100 and price is 1000
+
+
+
+
+
+print(phone11.brand)                                     # o/p: nokia
+print(phone11.model_name)                                # o/p: 1100
+phone11._price=500                                                                # problem 3) here we can also set negative price which is not possible for phone in real life
+print(phone11._price)                                    # o/p: 500               #  problem 2) price of the phone is updated here but not updated in belove line(complete_specification)
+print(phone11.complete_specification)                    # o/p: nokia   1100 and price is 1000
+
+
+# how can we solve this problems
+# we can set price 0 when user add negative price
+phone11=Phone1('nokia','1100',1000)          
+
+
+
+class Phone2:
+    def __init__(self, brand, model_name, price):
+        self.brand=brand
+        self.model_name=model_name
+        # if price>0:
+        #     self._price=price
+        # else:                                    # solution 1
+        #     self._price= 0       ----OR----
+        self._price=max(price,0)
+        # self.complete_specification=f"{self.brand} {self.model_name} and price is {self._price}"    # solution 2-----> this should not be written here, and make function which return this 
+
+    @property                        # if i use property decorator here, i don;t need to call it as a function
+    def complete_specification(self):             # soln 2
+        return f"{self.brand} {self.model_name} and price is {self._price}"
+
+
+
+    # getter(), setter()      # solution 3
+    @property                              # it will return price
+    def price1(self):                        # getter method
+        return self._price
+
+    @price1.setter
+    def price1(self,new_price):              # setter method
+        self._price=max(new_price,0)
+
+
+
+
+    def make_a_call(self, phone_number):
+        print(f"calling {phone_number}.......")
+
+    def full_name(self):
+        return f"{self.brand} {self.model_name}"
+
+
+
+#soln 1
+phone21=Phone2('nokia','1100',1000) 
+phone22=Phone2('nokia','1100',-1000) 
+print(phone21._price)                       # o/p: 1000
+print(phone22._price)                       # o/p: 0
+
+
+
+# soln 2
+phone21._price=500
+print(phone21._price)                       # o/p: 500         
+# print(phone21.complete_specification())     # o/p: nokia 1100 and price is 500              # soln 2   (without property decorator)
+
+print(phone21.complete_specification)       # o/p: nokia 1100 and price is 500
+
+
+
+
+# soln 3
+phone21._price=-500
+print(phone21._price)                         # o/p: -500
+print(phone21.complete_specification)         # o/p: nokia 1100 and price is -500
+
+phone21.price1=-500
+print(phone21.price1)                         # o/p: 0
+print(phone21.complete_specification)         # o/p: nokia 1100 and price is 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Inheritance
+
+class Phone3:                      # base clss/Parent class
+    def __init__(self, brand, model_name, price):
+        self.brand=brand
+        self.model_name=model_name
+        self._price=max(price,0)
+
+
+    def make_a_call(self, phone_number):
+        print(f"calling {phone_number}.......")
+
+    def full_name(self):
+        return f"{self.brand} {self.model_name}"
+
+
+
+class Smartphone(Phone3):                      # derived clss/child class
+    def __init__(self,  brand, model_name, price, ram, internal_memory, rear_camera):
+        #two ways to get parant class varibles
+        # Phone3.__init__(self, brand, model_name, price)         # 1) uncommon way
+
+        super().__init__(brand, model_name, price)                 # 2) common way ----> here we don't need to pass self as argument in super
+        self.ram=ram
+        self.internal_memory=internal_memory
+        self.rear_camera=rear_camera
+
+phone31=Phone3('nokia','1100',1000) 
+smartphone=Smartphone("Redmi","Y2",9000,"3 GB","32 GB","16 mpx")
+print(phone31.full_name())                         # o/p: nokia 1100
+print(smartphone.full_name())                      # o/p: Redmi Y2
+print(smartphone.full_name()+f" and price is : {smartphone._price}")             # o/p: Redmi Y2 and price is : 9000
