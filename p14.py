@@ -237,8 +237,8 @@ def add1(a,b):
 
 add1(3,4)                                        # o/p: this is awesome
 
-print(add1(3,4))                                 # o/p: 7
-
+print(add1(3,4))                                 # o/p: this is awesome
+                                                 #      7
 
 
 
@@ -276,7 +276,7 @@ def add2(a,b):
 
 print(add2.__doc__)                             # o/p:  This is wrapper function
 print(add2.__name__)                            # o/p: wrapper_function
-# here we call add2 function, even though we are getting output of wrapper function
+# here we called add2 function, even though we are getting output of wrapper function
 # we can overcome this problem by importing wraps module
 
 
@@ -343,7 +343,7 @@ print(add4(4,5))                                       # o/p: you are calling ad
 
 
 
-# How to find time which has taken by executing function
+# How to find time which has been taken by executing function
 import time
 t1=time.time()
 print("this is line 1")                              # o/p: this is line 1
