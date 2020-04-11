@@ -771,9 +771,9 @@ class Phone3:                      # base clss/Parent class
 class Smartphone(Phone3):                      # derived clss/child class
     def __init__(self,  brand, model_name, price, ram, internal_memory, rear_camera):
         #two ways to get parant class varibles
-        # Phone3.__init__(self, brand, model_name, price)         # 1) uncommon way
 
-        super().__init__(brand, model_name, price)                 # 2) common way ----> here we don't need to pass self as argument in super
+        # Phone3.__init__(self, brand, model_name, price)         # 1) uncommon way
+        super().__init__(brand, model_name, price)              # 2) common way ----> here we don't need to pass self as argument in super
         self.ram=ram
         self.internal_memory=internal_memory
         self.rear_camera=rear_camera
@@ -783,3 +783,646 @@ smartphone=Smartphone("Redmi","Y2",9000,"3 GB","32 GB","16 mpx")
 print(phone31.full_name())                         # o/p: nokia 1100
 print(smartphone.full_name())                      # o/p: Redmi Y2
 print(smartphone.full_name()+f" and price is : {smartphone._price}")             # o/p: Redmi Y2 and price is : 9000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Can we derive more than one class from base class
+# Multilevel inheritane
+# Method resolution order  (MRO)
+# Method Overriding
+# isinstance(), issubclass()
+
+
+
+# Can we derive more than one class from base class ----> YES
+class Phone4:                # parent class / base class
+    def __init__(self, brand, model_name, price):
+        self.brand=brand
+        self.model_name=model_name
+        self._price=max(price,0)
+
+    def full_name(self):
+        return f"{self.brand} {self.model_name}"
+
+    def make_a_call(self,number):
+        return f"calling {number}......"
+
+class Smartphone1(Phone4):           # child class / derived class
+    def __init__(self, brand, model_name, price, ram, internal_memory, rear_camera):
+        super().__init__(brand, model_name, price)
+        self.ram=ram
+        self.internal_memory=internal_memory
+        self.rear_camera=rear_camera
+
+class Smartphone2(Phone4):           # child class / derived class
+    def __init__(self, brand, model_name, price, ram, internal_memory, rear_camera):
+        super().__init__(brand, model_name, price)
+        self.ram=ram
+        self.internal_memory=internal_memory
+        self.rear_camera=rear_camera
+
+smartphone1=Smartphone2("Samsung","s10",50000,"8 GB","64 GB","32 mpx")
+print(smartphone1.full_name())                        # o/p: Samsung s10
+
+
+
+
+
+# Multilevel inheritane
+class Phone5:                # parent class / base class
+    def __init__(self, brand, model_name, price):
+        self.brand=brand
+        self.model_name=model_name
+        self._price=max(price,0)
+
+    def full_name(self):
+        return f"{self.brand} {self.model_name}"
+
+    def make_a_call(self,number):
+        return f"calling {number}......"
+
+class Smartphone3(Phone5):           # child class / derived class
+    def __init__(self, brand, model_name, price, ram, internal_memory, rear_camera):
+        super().__init__(brand, model_name, price)
+        self.ram=ram
+        self.internal_memory=internal_memory
+        self.rear_camera=rear_camera
+
+    def my_storage(self):
+        return f"Ram is : {self.ram} and Internal storage is : {self.internal_memory}"
+
+class FlagshipPhone(Smartphone3):           
+    def __init__(self, brand, model_name, price, ram, internal_memory, rear_camera, front_camera):
+        super().__init__(brand, model_name, price, ram, internal_memory, rear_camera)
+        self.front_camera=front_camera
+    
+p=FlagshipPhone("One+","o1",65000,"12 GB","128 GB","64 mpx","32 mpx")
+print(p.full_name())                    # o/p: One+ o1
+print(p.my_storage())                   # o/p: Ram is : 12 GB and Internal storage is : 128 GB
+
+
+
+
+
+
+
+# MRO (Metjhod resolution Order)
+
+# every class has method resolution order
+
+# How we can see (print) method resolution order
+# print(help(Smartphone3))            
+                                        # o/p:  Help on class Smartphone3 in module __main__:
+
+                                        #       class Smartphone3(Phone5)
+                                        #       |  Smartphone3(brand, model_name, price, ram, internal_memory, rear_camera)
+                                        #       |
+                                        #       |  Method resolution order:
+                                            #   |      Smartphone3                          .# this is order of python is searching for
+                                        #       |      Phone5                                # firstly, python checks in SmartPhone3, then in Phone5 and then object
+                                        #       |      builtins.object    # this is master class in python, all classes are inherited from it in Python
+                                        #       |
+                                        #       |  Methods defined here:
+                                        #       |
+                                        #       |  __init__(self, brand, model_name, price, ram, internal_memory, rear_camera)
+                                        #       |      Initialize self.  See help(type(self)) for accurate signature.
+                                        #       |
+                                        #       |  my_storage(self)
+                                        #       |
+                                        #       |  ----------------------------------------------------------------------
+                                        #       |  Methods inherited from Phone5:
+                                        #       |
+                                        #       |  full_name(self)
+                                        #       |
+                                        #       |  make_a_call(self, number)
+                                        #       |
+                                        #       |  ----------------------------------------------------------------------
+                                        #       |  Data descriptors inherited from Phone5:
+                                        #       |
+                                        #       |  __dict__
+                                        #       |      dictionary for instance variables (if defined)
+                                        #       |
+                                        #       |  __weakref__
+                                        #       |      list of weak references to the object (if defined)
+
+
+
+
+# print(help(FlagshipPhone)) 
+                                        #  o/p:  Help on class FlagshipPhone in module __main__:
+
+                                        #       class FlagshipPhone(Smartphone3)
+                                        #       |  FlagshipPhone(brand, model_name, price, ram, internal_memory, rear_camera, front_camera)
+                                        #       |
+                                        #       |  Method resolution order:
+                                        #       |      FlagshipPhone
+                                        #       |      Smartphone3
+                                        #       |      Phone5
+                                        #       |      builtins.object
+                                        #       |
+                                        #       |  Methods defined here:
+                                        #       |
+                                        #       |  __init__(self, brand, model_name, price, ram, internal_memory, rear_camera, front_camera)
+                                        #       |      Initialize self.  See help(type(self)) for accurate signature.
+                                        #       |
+                                        #       |  ----------------------------------------------------------------------
+                                        #       |  Methods inherited from Smartphone3:
+                                        #       |
+                                        #       |  my_storage(self)
+                                        #       |
+                                        #       |  ----------------------------------------------------------------------
+                                        #       |  Methods inherited from Phone5:
+                                        #       |
+                                        #       |  full_name(self)
+                                        #       |
+                                        #       |  make_a_call(self, number)
+                                        #       |
+                                        #       |  ----------------------------------------------------------------------
+                                        #       |  Data descriptors inherited from Phone5:
+                                        #       |
+                                        #       |  __dict__
+                                        #       |      dictionary for instance variables (if defined)
+                                        #       |
+                                        #       |  __weakref__
+                                        #       |      list of weak references to the object (if defined)
+
+
+
+
+
+
+
+
+
+
+
+
+# Method Overriding      -----> ethod has same name in different classes with different arguments
+
+class Phone6:                # parent class / base class
+    def __init__(self, brand, model_name, price):
+        self.brand=brand
+        self.model_name=model_name
+        self._price=max(price,0)
+
+    def full_name(self):
+        return f"{self.brand} {self.model_name}"
+
+    def make_a_call(self,number):
+        return f"calling {number}......"
+
+class Smartphone4(Phone6):           # child class / derived class
+    def __init__(self, brand, model_name, price, ram, internal_memory, rear_camera):
+        super().__init__(brand, model_name, price)
+        self.ram=ram
+        self.internal_memory=internal_memory
+        self.rear_camera=rear_camera
+
+    def my_storage(self):
+        return f"Ram is : {self.ram} and Internal storage is : {self.internal_memory}"
+
+    def full_name(self):
+        return f"{self.brand} {self.model_name} {self.ram} {self.internal_memory}"
+
+class FlagshipPhone1(Smartphone4):           
+    def __init__(self, brand, model_name, price, ram, internal_memory, rear_camera, front_camera):
+        super().__init__(brand, model_name, price, ram, internal_memory, rear_camera)
+        self.front_camera=front_camera
+
+
+
+s=Smartphone4("abc","dfg",20000,"3 gb","12 gb","10mpx")
+print(s.full_name())               # o/p: abc dfg 3 gb 12 gb
+
+f=FlagshipPhone1("One+","o1",65000,"12 GB","128 GB","64 mpx","32 mpx")
+print(f.full_name())               # o/p: One+ o1 12 GB 128 GB               # this is happening because python firstly checks in flagshipPhone class, if there is no method of full_name then it will check in smartphone class and there python got full_name method so python did not check in phone class, as a result smartphone's full_name method executed
+
+
+
+
+
+
+
+
+
+
+# isinstance(), issubclass() -----> built-in function
+
+
+
+
+# isinstance()     ----> we can use this function when we want to check this object is class or not like 's' is object of 'Smartphone4' class or not?
+
+print(isinstance(s,Smartphone4))           # o/p: True
+print(isinstance(s,Phone6))                # o/p: True
+print(isinstance(s,FlagshipPhone1))        # o/p: False
+
+
+
+
+
+
+# issubclass()
+print(issubclass(Smartphone4,Phone6))              # o/p: True
+print(issubclass(Smartphone4,FlagshipPhone1))      # o/p: False
+print(issubclass(FlagshipPhone1,Phone6))           # o/p: True
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Multiple Inheritance
+
+
+class A:
+    def class_a_method(self):
+        return 'I\'m Just class A method'
+    
+    def hello(self):
+        return "hello! fro class A"
+
+instance_a=A()
+print(instance_a.class_a_method())                      # o/p: I'm Just class A method
+
+
+
+
+
+class A1:
+    def class_a_method(self):
+        return 'I\'m Just class A1 method'
+    
+    def hello(self):
+        return "hello! from class A1"
+
+class B1:
+    def class_b_method(self):
+        return 'I\'m Just class B1 method'
+    
+    def hello(self):
+        return "hello! from class B1"
+
+class C1(A1,B1):
+# class C1(B1,A1):
+    pass                            # here i don't want to write anythong inside class so I wrote pass
+
+
+instance_c=C1()
+print(instance_c.class_a_method())               # o/p: I'm Just class A1 method
+print(instance_c.class_b_method())               # o/p: I'm Just class B1 method
+print(instance_c.hello())                        # o/p: hello! from class A1               # i got to called class A1's hello method because C1(A1,B1) so method resolution order is C1 then A1 then B1               (resolution order means python checks method available in class or not)
+print(instance_c.hello())                        # o/p: hello! from class B1               # # i got to called class A1's hello method because C1(B1,A1) so method resolution order is C1 then B1 then A1              (we can check resolution order using help function)
+
+
+
+# there are two ways in python to check method resolution order
+
+# 1) using help function
+# print(help(C1))                         # o/p: class C1(A1, B1)
+                                        #      |  Method resolution order:
+                                        #      |      C1
+                                        #      |      A1
+                                        #      |      B1
+                                        #      |  Methods inherited from A1:
+                                        #      |
+                                        #      |  class_a_method(self)
+
+# 2) mro function
+print(C1.mro())                         # o/p: [<class '__main__.C1'>, <class '__main__.A1'>, <class '__main__.B1'>, <class 'object'>]
+# or
+print(C1.__mro__)                       # o/p: (<class '__main__.C1'>, <class '__main__.A1'>, <class '__main__.B1'>, <class 'object'>)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Special Magic methods/Dunder methods
+# Operator overloading
+# Ploymorphism
+
+
+
+
+
+# Special Magic methods/Dunder methods     ------> which hass double underscore at front and rear like '__init__ method'.
+
+class Phone7:
+    def __init__(self, brand, model_name, price):
+        self.brand=brand
+        self.model_name=model_name
+        self._price=price
+        self.complete_specification=f"{self.brand} {self.model_name} and price is {self._price}"
+
+
+    def make_a_call(self, phone_number):
+        print(f"calling {phone_number}.......")
+
+
+l6=[1,2,3]
+print(l6)                                           # o/p: [1, 2, 3] 
+instance_phone7=Phone7("Nokia","s10",2000)
+print(instance_phone7)                              # o/p: <__main__.Phone7 object at 0x03912FA0>
+# when i call list's object by its name i got data of list but it is not happened with instance_phone7 object where i got location as output
+# we can overcome this problem using dunder methods (str, repr)   (repr means representation)
+
+
+
+
+class Phone8:
+    def __init__(self, brand, model_name, price):
+        self.brand=brand
+        self.model_name=model_name
+        self._price=price
+        self.complete_specification=f"{self.brand} {self.model_name} and price is {self._price}"
+
+
+    def make_a_call(self, phone_number):
+        print(f"calling {phone_number}.......")
+
+    # str, repr
+    def __repr__(self):
+        return f"{self.brand} {self._price}"
+
+
+instance_phone8=Phone8("Nokia","s10",2000)
+print(instance_phone8)                       # o/p: Nokia 2000
+
+
+
+
+
+
+
+class Phone9:
+    def __init__(self, brand, model_name, price):
+        self.brand=brand
+        self.model_name=model_name
+        self._price=price
+        self.complete_specification=f"{self.brand} {self.model_name} and price is {self._price}"
+
+
+    def make_a_call(self, phone_number):
+        print(f"calling {phone_number}.......")
+
+    # str, repr
+    def __str__(self):
+        return f"{self.brand} {self._price}"
+
+
+instance_phone9=Phone9("Nokia","s10",2000)
+print(instance_phone9)                       # o/p: Nokia 2000
+
+
+
+
+
+
+
+class Phone91:
+    def __init__(self, brand, model_name, price):
+        self.brand=brand
+        self.model_name=model_name
+        self._price=price
+        self.complete_specification=f"{self.brand} {self.model_name} and price is {self._price}"
+
+
+    def make_a_call(self, phone_number):
+        print(f"calling {phone_number}.......")
+
+    # str, repr
+    def __str__(self):
+        return f"{self.brand} {self.model_name}"
+    
+    def __repr__(self):
+        return f"{self.brand} {self.model_name} and price is {self._price}"
+
+
+instance_phone91=Phone91("Nokia","s10",2000)
+print(instance_phone91)                       # o/p: Nokia s10
+
+
+
+
+
+
+class Phone92:
+    def __init__(self, brand, model_name, price):
+        self.brand=brand
+        self.model_name=model_name
+        self._price=price
+        self.complete_specification=f"{self.brand} {self.model_name} and price is {self._price}"
+
+
+    def make_a_call(self, phone_number):
+        print(f"calling {phone_number}.......")
+
+    # str, repr  
+    def __repr__(self):
+        return f"{self.brand} {self.model_name} and price is {self._price}"
+
+    def __str__(self):
+        return f"{self.brand} {self.model_name}"
+
+instance_phone92=Phone92("Nokia","s10",2000)
+print(instance_phone92)                       # o/p: Nokia s10
+print(str(instance_phone92))                  # o/p: Nokia s10
+print(repr(instance_phone92))                 # o/p: Nokia s10 and price is 2000
+
+
+
+
+
+
+
+# professional use this way
+class Phone93:
+    def __init__(self, brand, model_name, price):
+        self.brand=brand
+        self.model_name=model_name
+        self._price=price
+        self.complete_specification=f"{self.brand} {self.model_name} and price is {self._price}"
+
+
+    def make_a_call(self, phone_number):
+        print(f"calling {phone_number}.......")
+
+    # str, repr  
+    def __str__(self):
+        return f"{self.brand} {self.model_name} and price is {self._price}"
+
+    def __repr__(self):
+        return f"Phone(\"{self.brand}\",\"{self.model_name}\",{self._price})"
+
+instance_phone93=Phone93("Nokia","s10",2000)
+print(instance_phone93)                      # o/p: Nokia s10 and price is 2000
+print(repr(instance_phone93))                # o/p: Phone("Nokia","s10",2000)
+
+
+
+
+
+
+
+
+
+d1=[1,2,3]
+d2=(1,3,4)
+d3="Ravin"
+print(len(d1))               # o/p: 3
+print(len(d2))               # o/p: 3
+print(len(d3))               # o/p: 5
+
+# i can also find the lenth of the phone object but i have to use duder method
+
+class Phone94:
+    def __init__(self, brand, model_name, price):
+        self.brand=brand
+        self.model_name=model_name
+        self._price=price
+        self.complete_specification=f"{self.brand} {self.model_name} and price is {self._price}"
+
+
+    def my_phone(self):
+        return f"{self.brand} {self.model_name}"
+    
+    def __len__(self):
+            return len(self.my_phone())
+
+instance_phone94=Phone94("Nokia","s10",2000)
+print(len(instance_phone94))             # o/p: 9
+
+
+
+
+
+
+
+
+
+
+
+
+# Operator Overloading
+
+#  2+3=5
+# 'abc'+'wer'='abcwer'
+
+instance_phone941=Phone94("Nokia","s11",2200)
+# print(instance_phone94+instance_phone941)                    # type error
+# we can overcome by + operator overloading
+
+
+
+class Phone95:
+    def __init__(self, brand, model_name, price):
+        self.brand=brand
+        self.model_name=model_name
+        self.price=price
+        self.complete_specification=f"{self.brand} {self.model_name} and price is {self.price}"
+
+
+    def my_phone(self):
+        return f"{self.brand} {self.model_name}"
+    
+    def __len__(self):
+            return len(self.my_phone())
+
+    def __add__(self, other):
+        return self.price + other.price                 # here we made + operator overloading
+
+
+instance_phone95a=Phone95("Nokia","s10",2000)
+instance_phone95b=Phone95("Nokia","s11",2200)
+print(instance_phone95a+instance_phone95b)               # o/p: 4200
+
+
+
+
+
+
+
+
+# Polymorphism        -----> many forms
+#  2+3=5                                # here + is used as sum of two number
+# 'abc'+'wer'='abcwer'                  # here + is used for concating two string                # here + used for many purpose do it is example of polymorphism
+# method overriding is also example of polymorphism
