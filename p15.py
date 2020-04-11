@@ -10,12 +10,12 @@ l=[1,2,3] # iterable---->list, tuple, string
 # for i in l:
 #     print(i)
 
-i=iter(l)           # when for loop run first time, it convert list in iterator by using iter function, and then we have to use next function
+i=iter(l)           # when for loop run first time, it converts list in iterator by using iter function, and then we have to use next function
 print(next(i))      # o/p: 1
 print(next(i))      # o/p: 2
 print(next(i))      # o/p: 3
 
-# we can change iterable in iterator and qw can do work as for loop.
+# we can change iterable in iterator using iter() function and we can do work as for loop using next() function.
 
 # iterator
 s=map(lambda s:s**2,l)  # it is iterator
@@ -49,15 +49,15 @@ for num in map(lambda s:s**2,l):           # we can apply for loop in iterator a
 
 # 1).  -----In List---
 #      [.............many numbers........]-----> this huge list will be stored in my memory
-#     this process will take time because, firstly list will create, and then it will be stored in memory. as a result this process will consume time and memory both.
+#     this process will take time because, firstly list will be created, and then it will be stored in memory. as a result this process will consume time and memory both.
 # 
 # 2). -----In generator-----
-#       one number generate at a time in memory, and when second number will generate, first number will go outside(delete). (3) or (5), (9)......
+#       one number generate at a time in memory, and when second number will be generated, first number will be gone outside(deleted). (3) or (5), (9)......
 #     As a result we can save our memory and time.
 
 
 # when we have to use our sequence many times, we should use list, 
-# while, we have to use our sequence only for one time, we can use generator. because in generator our sequence is not stred in memore while in list, the sequence stored in memory.
+# while, we have to use our sequence only for one time, we can use generator. because in generator our sequence is not stored in memory while in list, the sequence stored in memory.
 
 
 
@@ -182,7 +182,7 @@ for i in s1:
 square=[i**2 for i in range(1,11)]
 print(square)                          # o/p: [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 
-generator_square=(i**2 for i in range(1,11))              # here we just use () instead of [] for make generator comprehension
+generator_square=(i**2 for i in range(1,11))              # here we just use () instead of [] for making generator comprehension
 print(generator_square)                # o/p: <generator object <genexpr> at 0x033B1E98>
 
 for i in generator_square:
@@ -219,19 +219,23 @@ for i in generator_square:
 
 # List vs Generator
 
-# memory usage, time
+# memory use, time
 # when to use list, when to use generator
 
 
 
 # Memory
 
-# l=[i**2 for i in range(10000000)]                          # open task manager and check memory during run mode
+l=[i**2 for i in range(10000000)]                          # open task manager and check memory during run mode
 
-# l1=(i**2 for i in range(10000000))                         #open task manager and check memory during run mode
+l1=(i**2 for i in range(10000000))                         #open task manager and check memory during run mode
 
 
-# in task manager we can easily see the difference of memory occuption.....list will get more memory then generator
+# in task manager we can easily see the difference of memory occuption.....list will get more memory than generator
+
+
+
+
 
 
 
@@ -241,13 +245,11 @@ for i in generator_square:
 # Time 
 
 
-# import time
-# t1=time.time()
-# l2=[i**2 for i in range(10000000)]
-# t2=time.time()
-# print(t2-t1)                                  # o/p: 5.533963918685913
-
-
+import time
+t1=time.time()
+l2=[i**2 for i in range(10000000)]
+t2=time.time()
+print(t2-t1)                                  # o/p: 5.533963918685913
 
 
 
@@ -263,10 +265,13 @@ print(t2-t1)                                    # o/p: 0.0
 
 
 
+
+
+
 # when use list
-# when we want to store our sequence, and use data more than one time
+# when we want to store our sequence in memory, and use data more than one time
 
 
 
 # when use generator
-# when we don't want to store our sequence, and use data only one time
+# when we don't want to store our sequence in memory, and use data only one time
