@@ -43,40 +43,18 @@ l.append(8)
 
 
 
-# class Person:
-#     def __init__(self, first_name, last_name, age):                      # it is called as init method or constructor
-#         # instance variable                                              # self represents object like p1 and p2
-#         self.first_name=first_name                                       # whenever we called init method, self is bydefault first argument. and self represents our object.
-#         self.last_name=last_name
-#         self.age=age
+class Person:
+    def __init__(self, first_name, last_name, age):                      # it is called as init method or constructor
+        # instance variable                                              # self represents object like p1 and p2
+        self.first_name=first_name                                       # whenever we call init method, self should be first argument. and self represents our object.
+        self.last_name=last_name
+        self.age=age
 
-# p1=Person("Ravinkumar","Rakholiya",22)
-# p2=Person("Rupenkumar","Rakholiya1",19)
+p1=Person("Ravinkumar","Rakholiya",22)
+p2=Person("Rupenkumar","Rakholiya1",19)
 
-# print(p1.first_name)                           # o/p: Ravinkumar
-# print(p2.first_name)                           # o/p: Rupenkumar
-
-
-
-
-
-
-
-# class Person:
-#     def __init__(self, first_name, last_name, age):
-#         # instance variables
-#         print("init method // constructor get called")  
-#         self.first_name=first_name                                       
-#         self.last_name=last_name
-#         self.age=age
-
-# p1=Person("Ravinkumar","Rakholiya",22)                          # o/p: init method // constructor get called
-
-
-# p1=Person("Ravinkumar","Rakholiya",22)                      # init method called when we create object.   
-# p2=Person("Rupenkumar","Rakholiya1",19)
-# # o/p: init method // constructor get called
-# #      init method // constructor get called
+print(p1.first_name)                           # o/p: Ravinkumar
+print(p2.first_name)                           # o/p: Rupenkumar
 
 
 
@@ -84,15 +62,37 @@ l.append(8)
 
 
 
+class Person11:
+    def __init__(self, first_name, last_name, age):
+        # instance variables
+        print("init method // constructor get called")  
+        self.first_name=first_name                                       
+        self.last_name=last_name
+        self.age=age
 
-# class Person:
+p1=Person11("Ravinkumar","Rakholiya",22)                          # o/p: init method // constructor get called
+
+
+p1=Person11("Ravinkumar","Rakholiya",22)                      # init method called when we create object.   
+p2=Person11("Rupenkumar","Rakholiya1",19)
+# o/p: init method // constructor get called
+#      init method // constructor get called
+
+
+
+
+
+
+
+
+# class Person111:
 #     def __init__(person_obj, first_name, last_name, age):
 #         # instance variables
 #         person_obj.person_first_name=first_name                       # person_first_name----> instance variable                                     
 #         person_obj.last_name=last_name
 #         person_obj.age=age
 
-# p1=Person("Ravinkumar","Rakholiya",22) 
+# p1=Person111("Ravinkumar","Rakholiya",22) 
 # print(p1.person_first_name)                                 # o/p: Ravinkumar
 
 
@@ -139,7 +139,7 @@ print(lp1.laptop1)                                              # o/p: Dell insp
 
 
 
-# in python, the all function which are inside the class called as function.
+# in python, the all functions which are inside the class called as function.
 
 
 
@@ -263,7 +263,7 @@ print(c.circum_cir())                                  # o/p: 25.12
 print(c1.area_cir())                                   # o/p: 113.04
 
 # here are two problems
-# 1). we write pi value 3.14 when we create object, like in above case we made two object, hence we have to write 3.14 two times.....2). as a result 3.14 store in memory for each objects, so it will take more space, which is result of memory wastage.
+# 1). we write pi value 3.14 when we create object, like in above case we made two object, hence we have to write 3.14 two times.....2). as a result 3.14 store in memory for each objects, so it will take more space, which is reason of memory wastage.
 
 
 
@@ -331,7 +331,7 @@ class Laptop3:
         return self.price-a
 
 
-# Laptop3.lap_disc1=0
+Laptop3.lap_disc1=0
 lp5=Laptop3("Dell","inspire 5558",52500)
 lp6=Laptop3("Hp","inspire 5558",50000)
 print(lp5.laptop_discount())                            # o/p: 52500.0
@@ -345,7 +345,7 @@ print(lp6.__dict__)                              # o/p: {'brand_name': 'Hp', 'na
 
 # here, if we want to apply discount 30 for only Hp's laptop so....
 lp6.lap_disc1=30
-print(lp6.laptop_discount())                     # o/p: 45000.0              the output is took disc=10 , so we can not get right answer using this method
+print(lp6.laptop_discount())                     # o/p: 45000.0              the output took disc=10 , so we can not get right answer using this method
 
 
 
