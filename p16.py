@@ -429,7 +429,7 @@ class Person3:
         self.last_name=last_name
         self.age=age
 
-    @classmethod                              # declaring class method
+    @classmethod                              # declaration of class method
     def instance_count(cls):
         return f"you have created {cls.count_instance} instances in {cls.__name__} class"              # here we can write Person3.count_instance  and Person3.__name__   insted of cls.count_instance and cls.__name__
 
@@ -444,7 +444,7 @@ p32=Person3("Rupen","Rakholiya1",19)
 print(Person3.instance_count())          # calling class method     # o/p: you have created 2 instances in Person3 class       # this thing, we can access by using instance name.
 print(p31.instance_count())                                         # o/p: you have created 2 instances in Person3 class       # but we should not do this
 
-# in instance method first argument is object(self), while in class method the first argument is class
+# in instance method first argument is object(self), while in class method the first argument is class(cls)
 
 
 
@@ -461,13 +461,13 @@ print(p31.instance_count())                                         # o/p: you h
 
 # class methods as a constructors
 
-# when we create out instance(object), its call init method which is counstructor
+# when we create our instance(object), its call init method which is counstructor
 # but here, we want to create object in different way, which calls class method and would be constructor for that instance
 
 class Person4:
     count_instance=0             
     def __init__(self, first_name, last_name, age):                 
-        Person3.count_instance+=1
+        Person4.count_instance+=1
         self.first_name=first_name
         self.last_name=last_name
         self.age=age
@@ -510,8 +510,8 @@ print(p43.is_above_18())                # o/p: True
 
 # Static Method
 
-# class method related with our class
-# instance method related with our instance
+# class method is related with our class
+# instance method is related with our instance
 # but static method is not related with our class and instance
 # static method is like our normal function 
 # static method has logical relation with our class
@@ -563,8 +563,20 @@ Person5.hello()          # calling static method                # o/p: hello, st
 
 
 
-# Encapsulation                   ----encapulate data in class (encaptulate methodas data in a class)
+# Encapsulation                   ----encapulate data in class (encaptulate methods data in a class)
+# It describes the idea of wrapping data and the methods that work on data within one unit.
+# A class is an example of encapsulation as it encapsulates all the data that is member functions, variables, etc.
+# Consider a real-life example of encapsulation, in a company, there are different sections like the accounts section, finance section, sales section etc. The finance section handles all the financial transactions and keeps records of all the data related to finance. Similarly, the sales section handles all the sales-related activities and keeps records of all the sales. Now there may arise a situation when for some reason an official from the finance section needs all the data about sales in a particular month. In this case, he is not allowed to directly access the data of the sales section. He will first have to contact some other officer in the sales section and then request him to give the particular data. This is what encapsulation is. Here the data of the sales section and the employees that can manipulate them are wrapped under a single name “sales section”. As using encapsulation also hides the data. In this example, the data of any of the sections like sales, finance or accounts are hidden from any other section.
+
+
 # Abstraction                     ----hide the complexity   (method hide main logic)
+# Abstraction means hiding the complexity and only showing the essential features of the object. So in a way, Abstraction means hiding the real implementation and we, as a user, knowing only how to use it.
+# Real world example would be a vehicle which we drive with out caring or knowing what all is going underneath.
+#  or A TV set where we enjoy programs with out knowing the inner details of how TV works.
+# Abstraction in Python is achieved by using abstract classes and interfaces.
+
+
+
 # Some special Naming Conventions ----show as private for developer, but not private
 # Name Mangling                   ---- __name  (not a convention)
  
@@ -600,7 +612,7 @@ print(l)                 # o/p: [1, 2, 4, 5, 7]
 # '_' (underscore) is convention------> we use this because, i can say to other developer that don't make changes in it and treat as private method because it is private. but you know it is not private, anyone can make changes in it
 
 # _name  ---> convention of private name
-# __name__   ----> it is called by double underscorw method, or  dunder, or  magic method
+# __name__   ----> it is called as double underscore method, or  dunder, or  magic method
 
 
 phone1=Phone('nokia','1100',1000)
@@ -664,7 +676,7 @@ print(phone11.complete_specification)                    # o/p: nokia   1100 and
 print(phone11.brand)                                     # o/p: nokia
 print(phone11.model_name)                                # o/p: 1100
 phone11._price=500                                                                # problem 3) here we can also set negative price which is not possible for phone in real life
-print(phone11._price)                                    # o/p: 500               #  problem 2) price of the phone is updated here but not updated in belove line(complete_specification)
+print(phone11._price)                                    # o/p: 500               #  problem 2) price of the phone is updated here but not updated in below line(complete_specification)
 print(phone11.complete_specification)                    # o/p: nokia   1100 and price is 1000
 
 
@@ -685,7 +697,7 @@ class Phone2:
         self._price=max(price,0)
         # self.complete_specification=f"{self.brand} {self.model_name} and price is {self._price}"    # solution 2-----> this should not be written here, and make function which return this 
 
-    @property                        # if i use property decorator here, i don;t need to call it as a function
+    @property                        # if i use property decorator here, i don't need to call it as a function
     def complete_specification(self):             # soln 2
         return f"{self.brand} {self.model_name} and price is {self._price}"
 
@@ -724,7 +736,7 @@ phone21._price=500
 print(phone21._price)                       # o/p: 500         
 # print(phone21.complete_specification())     # o/p: nokia 1100 and price is 500              # soln 2   (without property decorator)
 
-print(phone21.complete_specification)       # o/p: nokia 1100 and price is 500
+print(phone21.complete_specification)       # o/p: nokia 1100 and price is 500                 # soln 2   (with property decorator)
 
 
 
