@@ -906,7 +906,7 @@ print(p.my_storage())                   # o/p: Ram is : 12 GB and Internal stora
 
 
 
-# MRO (Metjhod resolution Order)
+# MRO (Method resolution Order)
 
 # every class has method resolution order
 
@@ -997,7 +997,7 @@ print(p.my_storage())                   # o/p: Ram is : 12 GB and Internal stora
 
 
 
-# Method Overriding      -----> ethod has same name in different classes with different arguments
+# Method Overriding      -----> m   ethod has same name in different classes with different arguments
 
 class Phone6:                # parent class / base class
     def __init__(self, brand, model_name, price):
@@ -1105,7 +1105,7 @@ class A:
         return 'I\'m Just class A method'
     
     def hello(self):
-        return "hello! fro class A"
+        return "hello! from class A"
 
 instance_a=A()
 print(instance_a.class_a_method())                      # o/p: I'm Just class A method
@@ -1130,7 +1130,7 @@ class B1:
 
 class C1(A1,B1):
 # class C1(B1,A1):
-    pass                            # here i don't want to write anythong inside class so I wrote pass
+    pass                            # here i don't want to write anything inside class so I wrote pass
 
 
 instance_c=C1()
@@ -1190,13 +1190,13 @@ print(C1.__mro__)                       # o/p: (<class '__main__.C1'>, <class '_
 
 # Special Magic methods/Dunder methods
 # Operator overloading
-# Ploymorphism
+# Polymorphism
 
 
 
 
 
-# Special Magic methods/Dunder methods     ------> which hass double underscore at front and rear like '__init__ method'.
+# Special Magic methods/Dunder methods     ------> which have double underscore at front and rear like '__init__' method.
 
 class Phone7:
     def __init__(self, brand, model_name, price):
@@ -1214,7 +1214,7 @@ l6=[1,2,3]
 print(l6)                                           # o/p: [1, 2, 3] 
 instance_phone7=Phone7("Nokia","s10",2000)
 print(instance_phone7)                              # o/p: <__main__.Phone7 object at 0x03912FA0>
-# when i call list's object by its name i got data of list but it is not happened with instance_phone7 object where i got location as output
+# when i called list's object by its name i got data of list but it is not happened with instance_phone7 object where i got object reference(location) as output
 # we can overcome this problem using dunder methods (str, repr)   (repr means representation)
 
 
@@ -1356,7 +1356,7 @@ print(repr(instance_phone93))                # o/p: Phone("Nokia","s10",2000)
 
 
 
-
+  
 d1=[1,2,3]
 d2=(1,3,4)
 d3="Ravin"
@@ -1364,7 +1364,7 @@ print(len(d1))               # o/p: 3
 print(len(d2))               # o/p: 3
 print(len(d3))               # o/p: 5
 
-# i can also find the lenth of the phone object but i have to use duder method
+# i can also find the lenth of the phone object but i have to use dunder method
 
 class Phone94:
     def __init__(self, brand, model_name, price):
@@ -1436,5 +1436,11 @@ print(instance_phone95a+instance_phone95b)               # o/p: 4200
 
 # Polymorphism        -----> many forms
 #  2+3=5                                # here + is used as sum of two number
-# 'abc'+'wer'='abcwer'                  # here + is used for concating two string                # here + used for many purpose do it is example of polymorphism
-# method overriding is also example of polymorphism
+# 'abc'+'wer'='abcwer'                  # here + is used for concating two string                # here + used for many purpose so it is example of polymorphism
+# method overriding is also example of polymorphism  
+# same function name (but different signatures) being uses for different types.
+# len() being used for a string 
+print(len("geeks")) 
+  
+# len() being used for a list 
+print(len([10, 20, 30]))
