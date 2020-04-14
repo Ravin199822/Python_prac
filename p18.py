@@ -8,7 +8,7 @@
 # readlines method
 # close method
 
-path=(r'F:\Courses\python hindi\harshit vashisth\file1.txt)
+# path=(r'F:\Courses\python hindi\harshit vashisth\file1.txt)
 
 f=open('file1.txt')                   # here i have to put txt's file path if .py file and .txt file are not in same folder.
                                       # f=open('file1.txt','r') ---for read file, f=open('file1.txt','w') ---for write file, f=open('file1.txt')----bydefault is reading mode
@@ -48,7 +48,7 @@ f2.close()                                #      cursor position - 250
 
 
 
-seeh() method----> it is used for changing the position of cursor
+# seek() method----> it is used for changing the position of cursor
 f3=open('file1.txt') 
 print(f"cursor position - {f3.tell()}")                    
 print(f3.read())   
@@ -79,7 +79,7 @@ f3.close()
 
 
 
-readline() method  ----> read one line at a time
+# readline() method  ----> read one line at a time
 
 f4=open('file1.txt')     
 print(f4.readline())                          
@@ -114,7 +114,7 @@ f4.close()
 
 
 
-readlines() method ----> it will make list of lines which are in file
+# readlines() method ----> it will make list of lines which are in file
 f4=open('file1.txt')     
 lines=f4.readlines()
 print(lines)                      
