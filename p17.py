@@ -1,6 +1,6 @@
 # Built-in Errors
 # Exception, How to handle them
-# raise your own errors, debugging, etc etc
+# raise your own errors, debugging, etc
 
 
 
@@ -63,7 +63,7 @@ print(add1('2','3'))                  # o/p: OOPS you are passing wrong data typ
 def add2(a,b):
     if (type(a) is int) and (type(b) is int):
         return a+b
-    raise TypeError("OOPS you are passing wrong data type to function")                   # here,we can raise any error, like we can write valueError instead of typr error
+    raise TypeError("OOPS you are passing wrong data type to function")                   # here,we can raise any error, like we can write valueError instead of type error
 
 
 print(add2(2,3))                      # o/p: 5
@@ -135,7 +135,7 @@ class Cat1(Animal1):
         self.breed=breed
 
 doggy=Dog1("boony",'pug')
-print(doggy.sound())                       # o/p: meao meao              # this sound comes on dog object that i don't want,
+print(doggy.sound())                       # o/p: meao meao              # this sound comes from  dog object that i don't want,
 # but i want that class which inherit animal class define sound method, otherwise i should be got raise Error----> it is called NotImplementedError
 
 
@@ -486,14 +486,9 @@ import pdb              # import pdb module
 # q ---> use to quite the process
 # c ---> continue our code without debugging
 
-pdb.set_trace()                 # this always dtop my program each time after line ----> this we can see by using 'l' command
+pdb.set_trace()                 # this always stop my program each time after line ----> this we can see by using 'l' command
 name=input("Enter your name:\n")
 age=input("Please type your age:\n")
 print(f"hello {name} your age is {age}")
 age2=age+5                                    # o/p: TypeError: can only concatenate str (not "int") to str
 print(f'{name} you will be {age2} in next five years')
-
-
-
-
-
