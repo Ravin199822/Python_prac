@@ -1,0 +1,4 @@
+Ravin's salary is 100
+Rupen's salary is 50
+Yash's salary is 25
+Chirag's salary is 10
