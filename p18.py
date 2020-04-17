@@ -259,22 +259,19 @@
 
 
 
-# Excercise 1
-with open("file1.txt","r") as rf:
-    with open("file2.txt","w") as wf:
-        for i in rf:
-            wf.write((f"{(i).split(',')[0]}\'s salary is {(i).split(',')[1]}"))
+# # Excercise 1
+# with open("file1.txt","r") as rf:
+#     with open("file2.txt","w") as wf:
+#         for i in rf:
+#             wf.write((f"{(i).split(',')[0]}\'s salary is {(i).split(',')[1]}"))
 
 
-# OR
-with open("file1.txt","r") as rf:
-    with open("file2.txt","w") as wf:
-        for line in rf.readlines():
-            name, salary=line.split(',')
-            wf.write(f'{name}\'s salary is {salary}')
-
-
-
+# # OR
+# with open("file1.txt","r") as rf:
+#     with open("file2.txt","w") as wf:
+#         for line in rf.readlines():
+#             name, salary=line.split(',')
+#             wf.write(f'{name}\'s salary is {salary}')
 
 
 
@@ -284,7 +281,10 @@ with open("file1.txt","r") as rf:
 
 
 
-# Excercise 2
+
+
+
+# # Excercise 2
 # with open("index.html","r") as rf:
 #     with open("link.txt","w") as wf:
 #         for line in rf.readlines():
@@ -299,20 +299,151 @@ with open("file1.txt","r") as rf:
 
 
 
-# Better way
-with open("index.html","r") as rf:
-    with open("link.txt","w") as wf:
-        page=rf.read()
-        # link_exist=True
-        while True:
-            pos=page.find("<a href=")
-            if pos== -1:
-                break
-                # link_exist=False
-            else:
-                first_quot=page.find("\"",pos)
-                second_quot=page.find("\"",first_quot+1)
-                web=page[first_quot+1:second_quot]
-                wf.write(web+"\n")
-                page=page[second_quot:]
+# # Better way
+# with open("index.html","r") as rf:
+#     with open("link.txt","w") as wf:
+#         page=rf.read()
+#         # link_exist=True
+#         while True:
+#             pos=page.find("<a href=")
+#             if pos== -1:
+#                 break
+#                 # link_exist=False
+#             else:
+#                 first_quot=page.find("\"",pos)
+#                 second_quot=page.find("\"",first_quot+1)
+#                 web=page[first_quot+1:second_quot]
+#                 wf.write(web+"\n")
+#                 page=page[second_quot:]
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# # Read Love Story
+# with open('file1.txt','r') as rf:
+#     print(rf.encoding)
+#     data=rf.read()
+#     print(data)
+
+# # # file1.txt
+# # Love Story
+# # chat start
+# # 😘😗😇💓😗
+# # chat end
+# # Note - Real friends don't need to send this emojis !
+# # One more Note - after your family, dogs love human being most but they can't send you emojis !
+# # Second last note - if someone sends you thse emojis just say :) and don't get over exited !
+# # Fissl Note - I love you, subscribe to this channel now ! 
+
+# # o/p: cp1252
+# #      Love Story
+# #      chat start
+# #      ðŸ˜˜ðŸ˜—ðŸ˜‡ðŸ’“ðŸ˜—
+# #      chat end
+# #      Note - Real friends don't need to send this emojis !
+# #      One more Note - after your family, dogs love human being most but they can't send you emojis !
+# #      Second last note - if someone sends you thse emojis just say :) and don't get over exited !
+# #      Fissl Note - I love you, subscribe to this channel now !
+
+
+
+# # to read emojis we should use encoding
+# with open('file1.txt','r',encoding='utf-8') as rf:
+#     print(rf.encoding)
+#     data=rf.read()
+#     print(data)
+
+# # o/p: utf-8
+# #      Love Story
+# #      chat start
+# #      �����😇💓💓😗😗
+# #      chat end
+# #      Note - Real friends don't need to send this emojis !
+# #      One more Note - after your family, dogs love human being most but they can't send you emojis !
+# #      Second last note - if someone sends you thse emojis just say :) and don't get over exited !
+# #      Fissl Note - I love you, subscribe to this channel now !
+
+
+
+
+
+
+
+
+
+# # if our file has number of char and if we read then it will not memory efficient
+# with open('file1.txt','r') as rf:
+#     data=rf.read(100)
+#     print(data)
+
+# # o/p: it will return only 100 char from file
+
+
+
+# # to read whole file
+# with open('file1.txt','r') as rf:
+#     data=rf.read(10)
+#     while(len(data)>0):
+#         print(data)
+#         data=rf.read(10)
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+# # Work with CSV File
+# # csv file ---> used for storing data in tabula form
+# # we can read csv file using reader function or DictWriter class from csv module
+# from csv import reader
+# with open('file3.csv','r') as rf:
+#     csv_reader=reader(rf)
+#     # csv_reader is iterator
+#     print(csv_reader)                   # o/p: <_csv.reader object at 0x0125D8E8>
+#     print(type(csv_reader))             # o/p: <class '_csv.reader'>
+#     for i in csv_reader:                # csv_reader is iterator so we can print it only one time, if we want to use more than one time thwn we can conver it into list.
+#         print(i)
+
+# # o/p: ['name', 'email', 'phone_no']                 # but here column name also printed, we can overcome this problem using next() methos
+# #      ['Ravin', 'ravinrakholiya559@gmail.com', '+918732904392']
+# #      ['Rupen', 'rupenrakholiya559@gmail.com', '+917433089863']
+
+
+
+
+
+from csv import reader
+with open(r'file3.csv','r',encoding='utf=8') as rf:
+    csv_reader=reader(rf)
+    # csv_reader is iterator
+    print(csv_reader)                   # o/p: <_csv.reader object at 0x0125D8E8>
+    print(type(csv_reader))             # o/p: <class '_csv.reader'>
+    next(csv_reader)
+    for i in csv_reader:                # o/p: ['Ravin', 'ravinrakholiya559@gmail.com', '+918732904392']
+        print(i)                        #      ['Rupen', 'rupenrakholiya559@gmail.com', '+917433089863']
+       
