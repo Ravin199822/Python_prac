@@ -154,7 +154,7 @@ with open('file3.csv','w',newline='') as wf:                    # now file3.csv 
 
 
 
-# here we are using from csv import dict....., we can do this by using only import csv, but we don't import csv because if we import csv then python searching for dict... and it may take more time
+# here we are using from csv import dict....., we can do this by using only import csv, but we shouldn't import csv because if we import csv then python searching for dict... and it may take more time
 
 
 
@@ -208,7 +208,7 @@ with open("file3.csv",'w',newline='') as wf:                     # file3.csv is 
 
 
 
-# DictWriter is betterthan Writer
+# DictWriter is better than Writer
 
 
 
