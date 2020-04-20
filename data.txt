@@ -1,0 +1,4 @@
+Ravin Rakholiya,ravinrakholiya559@gmail.com,22,Male,Student,YES  
+Rupen Rakholiya,rupenrakholiya559@gmail.com,19,Male,Student,NO  
+wqd,wqd,2,Female,Student,YES  
+Rupal,akakd,22,Male,Student,YES  
