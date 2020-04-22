@@ -334,11 +334,11 @@ for i in user_info:
 
 
 # Button
-def submit():
+def submit1():
     for i in user_info:
         print(f"my {i} is {user_info[i].get()}.")
 
-button_entry=ttk.Button(win,text='Submit',command=submit)
+button_entry=ttk.Button(win,text='Submit',command=submit1)
 button_entry.grid(row=count+1,columnspan=3, padx=40, pady=10)
 
 
@@ -393,11 +393,11 @@ for i in user_info:
 
 
 # Button
-def submit():
+def submit2():
     for i in user_info:
         print(f"my {i} is {user_info[i].get()}.")
 
-button_entry=ttk.Button(lable_frame,text='Submit',command=submit)
+button_entry=ttk.Button(lable_frame,text='Submit',command=submit2)
 button_entry.grid(row=count+1,columnspan=3)
 
 
@@ -628,7 +628,7 @@ age_entry.grid(row=1,column=1,padx=10,pady=10,sticky=tk.W)
 
 # ********** Button **************
 
-def action():
+def action1():
     # m_box.showinfo('title','content of this message box !!')
     # m_box.showerror('title','content of this message box !!!')
     # m_box.showwarning('title','content of this message box !!!')
@@ -651,32 +651,9 @@ def action():
                 m_box.showwarning("warning","you are not 18, visit this content on your own risk")
 
 
-sub_btn=ttk.Button(win,text="Submit", command=action)
+sub_btn=ttk.Button(win,text="Submit", command=action1)
 sub_btn.grid(row=1,columnspan=3,padx=40)
 
 
 
 win.mainloop()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
