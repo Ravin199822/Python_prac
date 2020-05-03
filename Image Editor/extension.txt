@@ -1,0 +1,21 @@
+extension_tuple=('.aif','.cda','.mid','.midi','.mp3','.mpa','.ogg','.wav','.wma','.wpl','.7z','.arj','.deb','.pkg','.rar','.rpm','.gz','.z','.zip','.bin','.dmg','.iso','.toast','.vcd','.csv','.dat','.db','.dbf','.log','.mdb','.sav','.sql','.tar','.xml','.email','.eml','.emlx','.msg','.oft','.ost','.pst','.vcf','.apk','.bat','.cgi','.com','.exe','.gadget','.jar','.wsf','.fnt','.fon','.otf','.ttf','.ai','.bmp','.gif','.ico','.jpeg','.jpg','.png','.ps','.psd','.svg','.tif','.tiff','.asp','.aspx','.cer','.cfm','.css','.htm','.html','.js','.jsp','.part','.php','.py','.rss','.xhtml','.key','.odp','.pps','.ppt','.pptx','.c','.class','.cpp','.cs','.h','.java','.pl','.sh','.swift','.vb','.ods','.xls','.xlsm','.xlsx','.bak','.cab','.cfg','.cpl','.cur','.dll','.dmp','.drv','.icns','.ini','.lnk','.msi','.sys','.tmp','.3g2','.3gp','.avi','.flv','.h264','.m4v','.mkv','.mov','.mp4','.mpg','.mpeg','.rm','.swf','.vob','.wmv','.doc','.docx','.odt','.rtf','.tex','.txt','.wpd','.wps','.pdf')
+extension_name=('audio_extensions','compressed_file_extensions','disc_and_media_extensions','database_file_extensions','email_extensions','executable_extensions','font_file_extensions','image_extensions','web_extensions','presentation_extensions','programming_extensions','spreadsheet_extensions','system_realated_extensions','video_extensions','file_extensions')
+
+
+dict_extensions={
+            'audio_extensions'          :   ('.aif','.cda','.mid','.midi','.mp3','.mpa','.ogg','.wav','.wma','.wpl'),
+            'compressed_file_extensions':   ('.7z','.arj','.deb','.pkg','.rar','.rpm','.gz','.z','.zip'),
+            'disc_and_media_extensions' :   ('.bin','.dmg','.iso','.toast','.vcd'),
+            'database_file_extensions'  :   ('.csv','.dat','.db','.dbf','.log','.mdb','.sav','.sql','.tar','.xml'),
+            'email_extensions'          :   ('.email','.eml','.emlx','.msg','.oft','.ost','.pst','.vcf'),
+            'executable_extensions'     :   ('.apk','.bat','.cgi','.com','.exe','.gadget','.jar','.wsf'),
+            'font_file_extensions'      :   ('.fnt','.fon','.otf','.ttf'),
+            'image_extensions'          :   ('.ai','.bmp','.gif','.ico','.jpeg','.jpg','.png','.ps','.psd','.svg','.tif','.tiff'),
+            'web_extensions'            :   ('.asp','.aspx','.cer','.cfm','.css','.htm','.html','.js','.jsp','.part','.php','.py','.rss','.xhtml'),
+            'presentation_extensions'   :   ('.key','.odp','.pps','.ppt','.pptx'),
+            'programming_extensions'    :   ('.c','.class','.cpp','.cs','.h','.java','.pl','.sh','.swift','.vb'),
+            'spreadsheet_extensions'    :   ('.ods','.xls','.xlsm','.xlsx'),
+            'system_realated_extensions':   ('.bak','.cab','.cfg','.cpl','.cur','.dll','.dmp','.drv','.icns','.ini','.lnk','.msi','.sys','.tmp'),
+            'video_extensions'          :   ('.3g2','.3gp','.avi','.flv','.h264','.m4v','.mkv','.mov','.mp4','.mpg','.mpeg','.rm','.swf','.vob','.wmv'),
+            'file_extensions'           :   ('.doc','.docx','.odt','.rtf','.tex','.txt','.wpd','.wps','.pdf')
+}

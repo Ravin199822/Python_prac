@@ -24,7 +24,7 @@ dict_extensions={
             'spreadsheet_extensions'    :   ('.ods','.xls','.xlsm','.xlsx'),
             'system_realated_extensions':   ('.bak','.cab','.cfg','.cpl','.cur','.dll','.dmp','.drv','.icns','.ico','.ini','.lnk','.msi','.sys','.tmp'),
             'video_extensions'          :   ('.3g2','.3gp','.avi','.flv','.h264','.m4v','.mkv','.mov','.mp4','.mpg','.mpeg','.rm','.swf','.vob','.wmv'),
-            'file_extensions'           :   ('.doc','.docx','.odt','.pdf','.rtf','.tex','.txt','.wpd'),
+            'file_extensions'           :   ('.doc','.docx','.odt','.pdf','.rtf','.tex','.txt','.wpd')
 }
 
 folderpath=input("Please Enter Path:\n")

@@ -146,7 +146,7 @@ import os
 
 
 # # how to change the extension
-# img1=Image.open(r'F:\Python_prac\Chapter 20\Ravin\r.png')
+img1=Image.open(r'C:\Users\Rupen Rakholiya\Desktop\compress\x1.png')
 # # if img1.mode == 'RGBA':
 # #     img1 = img1.convert('RGB')
 # # img1.save(r'F:\Python_prac\Chapter 20\Ravin\r.jpg')
@@ -157,9 +157,9 @@ import os
 
 
 # # resize image files
-# max_size=(250,250)
+# max_size=(500,250)
 # img1.thumbnail(max_size)
-# img1.save(r'F:\Python_prac\Chapter 20\Ravin\rsmall.png')
+# img1.save(r'C:\Users\Rupen Rakholiya\Desktop\compress\z1.png')
 
 
 # resize multiple images using for loop 
@@ -189,12 +189,12 @@ import os
 # sharpness, brightnessm color, contrast we have to import ImageEnhance module
 
 # Sharpness 
-# from PIL import ImageEnhance
+from PIL import ImageEnhance
 
 
 # img1=Image.open(r'F:\Python_prac\Chapter 20\Ravin\r2.jpg')
-# enhancer=ImageEnhance.Sharpness(img1)                                 # Sharpness is a class, ImageEnhance is a module
-# enhancer.enhance(10).save(r'F:\Python_prac\Chapter 20\Ravin\r2edited1.jpg')
+enhancer=ImageEnhance.Sharpness(img1)                                 # Sharpness is a class, ImageEnhance is a module
+enhancer.enhance(5).save(r'C:\Users\Rupen Rakholiya\Desktop\compress\x2.png')
 # # 0 ---> blurry image
 # # 1 ---> original image
 # # 2 ---> image with increased sharpness
@@ -250,10 +250,10 @@ import os
 
 
 
-# Image blur  ----> for it we have to import filter
-from PIL import ImageFilter
+# # Image blur  ----> for it we have to import filter
+# from PIL import ImageFilter
 
-img1=Image.open(r'F:\Python_prac\Chapter 20\Ravin\r2edited1.jpg')
-img1.filter(ImageFilter.Gaussianblur(radius=4)).save(r'F:\Python_prac\Chapter 20\Ravin\r2blur.png')
+# img1=Image.open(r'F:\Python_prac\Chapter 20\Ravin\r2edited1.jpg')
+# img1.filter(ImageFilter.Gaussianblur(radius=4)).save(r'F:\Python_prac\Chapter 20\Ravin\r2blur.png')
 
 # bydefault radius is 2
