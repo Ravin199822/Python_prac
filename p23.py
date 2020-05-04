@@ -2,7 +2,7 @@ import mysql.connector
 
 
 
-# Type Status in MySQL command line client
+# Type Status in MySQL command line client   -----> we will get information about mySQL
 
 
 
